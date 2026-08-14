@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://retapmedia.com/sitemap.xml

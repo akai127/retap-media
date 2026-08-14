@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retap Media — Turn the Leads You Already Paid For Into Booked Appointments</title>
+<meta name="description" content="Retap Media builds appointment systems for home-services companies: database reactivation, speed-to-lead AI, AI receptionists, booking funnels, and conversion websites — all pointed at the leads you already own.">
+<meta property="og:title" content="Retap Media — The Money Is Already in Your CRM">
+<meta property="og:description" content="Database reactivation, speed-to-lead AI, and booking funnels for home-services companies. We turn dead CRM leads into sat appointments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://retapmedia.com/">
+<link rel="canonical" href="https://retapmedia.com/">
+<link rel="icon" type="image/svg+xml" href="assets/wave-badge.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Retap Media",
+  "legalName": "Retap Media LLC",
+  "url": "https://retapmedia.com/",
+  "email": "prestonmwaia@gmail.com",
+  "description": "Appointment systems for home-services companies: database reactivation, AI follow-up, and booking funnels that monetize the leads businesses already paid for.",
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "knowsAbout": ["database reactivation", "lead follow-up", "appointment booking", "speed to lead", "AI receptionist", "home services marketing"],
+  "brand": [{ "@type": "Brand", "name": "The Solar Appointment Engine", "url": "https://solaraiflow.com/" }]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0B;
+    --panel:#131311;
+    --panel-2:#181815;
+    --hairline:rgba(212,175,55,.18);
+    --gold:#D4AF37;
+    --gold-light:#F1D77E;
+    --gold-deep:#A8842C;
+    --champagne:#E3CD96;
+    --ember:#E06A45;
+    --green:#5BC17E;
+    --body:#E9E5DB;
+    --muted:#9C968A;
+    --display:'Fraunces',Georgia,serif;
+    --sans:'Archivo','Segoe UI',Arial,sans-serif;
+    --mono:'IBM Plex Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--body);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:var(--gold);text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  img,svg{max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  [hidden]{display:none !important}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,10,11,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s;
+  }
+  .nav.scrolled{border-bottom-color:var(--hairline)}
+  .nav-inner{display:flex;align-items:center;gap:28px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--body)}
+  .brand svg{width:58px;height:25px;flex:none}
+  .brand-name{font-family:var(--mono);font-size:13px;letter-spacing:.28em;color:var(--gold-light)}
+  .brand-name b{font-weight:500;color:var(--champagne)}
+  .nav-links{display:flex;gap:26px;margin-left:auto}
+  .nav-links a{color:var(--muted);font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--gold-light)}
+  .btn{
+    display:inline-block;
+    font-family:var(--sans);font-weight:600;font-size:15.5px;
+    padding:13px 26px;border-radius:4px;border:1px solid transparent;
+    cursor:pointer;transition:transform .15s ease,box-shadow .2s,background .2s;
+  }
+  .btn-gold{
+    background:linear-gradient(160deg,var(--gold-light) 0%,var(--gold) 45%,var(--gold-deep) 100%);
+    color:#151102;
+  }
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(212,175,55,.28)}
+  .btn-ghost{border-color:var(--hairline);color:var(--champagne);background:transparent}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+  .nav .btn{padding:10px 20px;font-size:14px}
+  @media (max-width:760px){.nav-links a:not(.btn){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 0}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;
+    color:var(--gold);text-transform:uppercase;display:block;margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(38px,5.6vw,64px);
+    line-height:1.06;letter-spacing:-.01em;color:#F5F2E9;
+    max-width:16ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+  .hero-sub{max-width:56ch;margin:26px 0 34px;font-size:18.5px;color:var(--muted)}
+  .hero-sub strong{color:var(--body);font-weight:500}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .hero-note{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+  /* ---------- signature: the ledger ---------- */
+  .ledger{
+    background:var(--panel);border:1px solid rgba(212,175,55,.16);border-radius:10px;
+    padding:20px;max-width:460px;width:100%;justify-self:end;
+    box-shadow:0 18px 60px rgba(0,0,0,.5);
+  }
+  .ledger-head{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+    border-bottom:1px solid rgba(156,150,138,.15);padding-bottom:12px;margin-bottom:6px;
+  }
+  .ledger-title{font-weight:600;font-size:14.5px}
+  .ledger-title span{display:block;font-family:var(--mono);font-weight:400;font-size:11px;color:var(--muted);margin-top:3px;letter-spacing:.05em}
+  .ledger-sum{font-family:var(--mono);font-size:12px;color:var(--ember);white-space:nowrap}
+  .lrow{
+    display:grid;grid-template-columns:1fr auto;gap:4px 12px;
+    padding:11px 6px;border-bottom:1px solid rgba(156,150,138,.09);
+    transition:background .6s ease;
+  }
+  .lrow:last-child{border-bottom:none}
+  .lrow .nm{font-size:13.5px;color:var(--body);font-weight:500}
+  .lrow .src{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em}
+  .lrow .st{
+    grid-row:1 / span 2;align-self:center;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+    color:var(--ember);text-align:right;
+  }
+  .lrow.dead .nm{color:var(--muted)}
+  .lrow.lit{background:rgba(91,193,126,.07)}
+  .lrow.lit .st{color:var(--green)}
+  .lrow.lit .nm{color:var(--champagne)}
+  .ledger-note{font-family:var(--mono);font-size:10.5px;color:rgba(156,150,138,.6);margin-top:10px;text-align:right;letter-spacing:.06em}
+
+  /* ---------- shared section chrome ---------- */
+  section{padding:88px 0 0}
+  .sec-head{max-width:60ch;margin-bottom:44px}
+  .sec-head h2{
+    font-family:var(--display);font-weight:500;font-size:clamp(28px,3.8vw,42px);
+    line-height:1.12;color:#F5F2E9;letter-spacing:-.01em;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--gold);font-weight:600}
+  .sec-lead{color:var(--muted);margin-top:16px;max-width:58ch}
+  .sec-lead strong{color:var(--body);font-weight:500}
+
+  /* ---------- stat strip ---------- */
+  .stats{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-top:72px}
+  .stats-inner{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{padding:34px 22px;border-left:1px solid var(--hairline)}
+  .stat:first-child{border-left:none}
+  .stat-num{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--gold-light);line-height:1}
+  .stat-num.ember{color:var(--ember)}
+  .stat-label{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+  .stat-src{font-family:var(--mono);font-size:10.5px;color:rgba(156,150,138,.55);margin-top:8px;letter-spacing:.04em}
+
+  /* ---------- stack ---------- */
+  .stack{display:grid;gap:14px}
+  .layer{
+    display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:baseline;
+    background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;
+    padding:22px 26px;
+  }
+  .layer.core{border-color:rgba(212,175,55,.4);background:linear-gradient(180deg,rgba(212,175,55,.06),var(--panel))}
+  .layer h3{font-size:17.5px;font-weight:600;color:#F5F2E9}
+  .layer p{grid-column:2;font-size:14.5px;color:var(--muted);max-width:64ch}
+  .layer .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);white-space:nowrap;
+  }
+  .layer.core .tag{color:#151102;background:var(--gold);border-radius:999px;padding:3px 10px}
+  @media (max-width:640px){
+    .layer{grid-template-columns:1fr}
+    .layer p{grid-column:1}
+    .layer .tag{order:-1}
+  }
+
+  /* ---------- niches ---------- */
+  .niches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:900px){.niches{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.niches{grid-template-columns:1fr}}
+  .niche{
+    background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;
+    padding:24px;display:flex;flex-direction:column;gap:10px;min-height:170px;
+    transition:border-color .2s;
+  }
+  .niche:hover{border-color:var(--hairline)}
+  .niche.live{border-color:rgba(91,193,126,.45)}
+  .niche .status{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .niche.live .status{color:var(--green)}
+  .niche h3{font-family:var(--display);font-weight:500;font-size:21px;color:#F5F2E9}
+  .niche p{font-size:14px;color:var(--muted);flex:1}
+  .niche a{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+  .niche a:hover{color:var(--gold-light)}
+
+  /* ---------- how ---------- */
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:760px){.how{grid-template-columns:1fr}}
+  .step{background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;padding:24px}
+  .step .when{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .step h3{font-size:16.5px;font-weight:600;color:#F5F2E9;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  /* ---------- stance ---------- */
+  .stance{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:760px){.stance{grid-template-columns:1fr}}
+  .tenet{background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;padding:22px 24px}
+  .tenet h3{font-size:15.5px;font-weight:600;color:#F5F2E9;margin-bottom:6px}
+  .tenet h3 .ok{color:var(--green);font-family:var(--mono);margin-right:6px}
+  .tenet p{font-size:14px;color:var(--muted)}
+
+  /* ---------- founders ---------- */
+  .founder{
+    display:flex;gap:36px;align-items:center;
+    background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:10px;
+    padding:40px 44px;
+  }
+  .founder-photos{display:flex;flex-direction:column;gap:22px;flex:none}
+  .founder-photos figure{margin:0;text-align:center}
+  .founder-photos img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+  .founder-photos figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.08em}
+  .founder h3{font-family:var(--display);font-weight:500;font-size:24px;color:#F5F2E9;margin-bottom:12px}
+  .founder p{color:var(--muted);font-size:16px}
+  .founder .sig{font-family:var(--display);font-style:italic;color:var(--gold);font-size:20px;margin-top:14px}
+  @media (max-width:760px){
+    .founder{flex-direction:column;text-align:center;padding:34px 26px}
+    .founder-photos{flex-direction:row;justify-content:center;flex-wrap:wrap}
+  }
+
+  /* ---------- CTA / book ---------- */
+  .book{
+    text-align:center;background:var(--panel);
+    border:1px solid var(--hairline);border-radius:10px;
+    padding:64px 32px;
+  }
+  .book h2{
+    font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,44px);
+    color:#F5F2E9;line-height:1.1;
+  }
+  .book h2 em{font-style:italic;color:var(--gold);font-weight:600}
+  .book p{color:var(--muted);max-width:52ch;margin:18px auto 30px}
+  .book .fine{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.04em}
+  #calendar-embed{margin-top:30px}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:96px;border-top:1px solid var(--hairline);padding:44px 0 56px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand svg{width:52px;height:22px}
+  .foot small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:2;letter-spacing:.04em}
+  .foot a{color:var(--muted)}
+  .foot a:hover{color:var(--gold-light)}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Retap Media home">
+      <svg viewBox="0 0 940 400" role="img" aria-hidden="true">
+        <path d="M 40 90 L 155 330 L 260 150 L 365 330 L 436.3 168.8" fill="none" stroke="#F2EDE3" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 411 226 L 480 70 L 595 230 L 710 70 L 850 330" fill="none" stroke="#D4AF37" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">RETAP&nbsp;<b>MEDIA</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#stack">The Stack</a>
+      <a href="#niches">Industries</a>
+      <a href="#how">How It Works</a>
+      <a href="#founders">Who We Are</a>
+      <a class="btn btn-gold" href="#book">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding-top:84px">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Retap Media · For home-services companies</span>
+      <h1>The cheapest appointment you'll ever book is already <em>in your CRM.</em></h1>
+      <p class="hero-sub">Every lead you've ever paid for is still sitting in your database. We build the systems that go back for them — <strong>compliant reactivation campaigns, under-60-second AI follow-up, and booking funnels</strong> that turn dead lead lists into sat appointments. You did the spending. We do the retapping.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#book">Book a Strategy Call</a>
+        <a class="btn btn-ghost" href="#stack">See the Full Stack</a>
+      </div>
+      <p class="hero-note">For businesses with 500+ leads in their database. No long-term contracts.</p>
+    </div>
+    <div class="ledger" aria-label="Example CRM lead list being reactivated">
+      <div class="ledger-head">
+        <div class="ledger-title">Lead database · 1,382 contacts<span>Example — what a "dead" CRM actually holds</span></div>
+        <div class="ledger-sum" id="ledger-sum">$0 re-earned</div>
+      </div>
+      <div class="lrow dead" data-name="M. Torres" data-val="$212 paid · Mar '25">
+        <div class="nm">M. Torres</div><div class="src">FB ads · $212 paid · Mar '25</div>
+        <div class="st">never called back</div>
+      </div>
+      <div class="lrow dead" data-val="quoted, went quiet">
+        <div class="nm">D. Whitfield</div><div class="src">Referral · $0 · Nov '24</div>
+        <div class="st">quoted, went quiet</div>
+      </div>
+      <div class="lrow dead">
+        <div class="nm">S. Okafor</div><div class="src">Google LSA · $186 paid · Jun '25</div>
+        <div class="st">1 voicemail, marked dead</div>
+      </div>
+      <div class="lrow dead">
+        <div class="nm">R. Calloway</div><div class="src">Door knock · $0 · Aug '24</div>
+        <div class="st">"call me next season"</div>
+      </div>
+      <div class="lrow dead">
+        <div class="nm">L. Pham</div><div class="src">Web form · $147 paid · Jan '26</div>
+        <div class="st">responded after 42 hrs</div>
+      </div>
+      <p class="ledger-note">EXAMPLE DATA — EVERY CRM HAS THESE ROWS</p>
+    </div>
+  </div>
+
+  <!-- stat strip -->
+  <div class="stats">
+    <div class="wrap stats-inner">
+      <div class="stat">
+        <div class="stat-num ember">42 hrs</div>
+        <div class="stat-label">Average time a US company takes to respond to a new lead — 23% never respond at all</div>
+        <div class="stat-src">HARVARD BUSINESS REVIEW</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Touches it takes to close 80% of sales — yet only ~10% of reps make more than three attempts</div>
+        <div class="stat-src">ZOOMINFO / IRC SALES</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">78%</div>
+        <div class="stat-label">Of buyers choose the company that responds to them first</div>
+        <div class="stat-src">LEAD CONNECT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section id="stack" aria-labelledby="stack-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The full stack</span>
+      <h2 id="stack-h">One engine. Every layer between a lead and a <em>sat appointment.</em></h2>
+      <p class="sec-lead">Everything plugs into the CRM and lead flow you already run — nothing gets ripped out, nothing changes for your sales process. Appointments appear on your closers' calendars.</p>
+    </div>
+    <div class="stack">
+      <div class="layer core reveal">
+        <h3>Database reactivation</h3>
+        <span class="tag">The core</span>
+        <p>Compliant campaigns that go back through years of "dead" leads and wake them up — messages that read like a person wrote them, opt-outs honored instantly, and every reply worked to a booking or a clean no.</p>
+      </div>
+      <div class="layer reveal">
+        <h3>Speed-to-lead follow-up</h3>
+        <span class="tag">New leads</span>
+        <p>Every new lead answered in under 60 seconds, 24/7 — nights, weekends, and while your crews are on the job — then worked through a full five-plus-touch sequence automatically.</p>
+      </div>
+      <div class="layer reveal">
+        <h3>AI receptionist</h3>
+        <span class="tag">Inbound</span>
+        <p>Calls answered, questions handled, and qualified callers booked straight onto the calendar. Anything ambiguous routes to a human instead of guessing.</p>
+      </div>
+      <div class="layer reveal">
+        <h3>Booking &amp; nurture funnels</h3>
+        <span class="tag">Pipeline</span>
+        <p>CRM pipelines that confirm, remind, and reschedule — built to cut no-shows, not just create "bookings" that never sit.</p>
+      </div>
+      <div class="layer reveal">
+        <h3>Conversion websites</h3>
+        <span class="tag">Front door</span>
+        <p>Fast, focused sites built to catch the demand the campaigns create — estimator tools, booking flows, and proof, not brochures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NICHES ============ -->
+<section id="niches" aria-labelledby="niches-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Industries</span>
+      <h2 id="niches-h">The same engine, tuned <em>per trade.</em></h2>
+      <p class="sec-lead">We build one vertical at a time, deep — real qualification criteria, real seasonality, real compliance — instead of a thin template across fifty industries.</p>
+    </div>
+    <div class="niches">
+      <div class="niche live reveal">
+        <span class="status">● Live now</span>
+        <h3>Residential solar</h3>
+        <p>The Solar Appointment Engine: follow-up and database reactivation for installers — 10+ qualified, sat appointments in the first 90 days, guaranteed in writing.</p>
+        <a href="https://solaraiflow.com/">solaraiflow.com →</a>
+      </div>
+      <div class="niche reveal">
+        <span class="status">Opening next</span>
+        <h3>Pools &amp; spas</h3>
+        <p>Built for the September–February buying season: revive quote-and-vanish leads before your competitors' first postcard lands.</p>
+      </div>
+      <div class="niche reveal">
+        <span class="status">In the build queue</span>
+        <h3>Generator dealers</h3>
+        <p>Storm-season demand, high tickets, and databases full of homeowners who asked for a quote and never got a second call.</p>
+      </div>
+      <div class="niche reveal">
+        <span class="status">In the build queue</span>
+        <h3>HVAC</h3>
+        <p>Replacement quotes go cold in days. The engine keeps every estimate alive until the homeowner decides — with you, not the other bid.</p>
+      </div>
+      <div class="niche reveal">
+        <span class="status">Your trade</span>
+        <h3>Something else?</h3>
+        <p>If you buy leads, run a CRM, and close in-home or over the phone, the engine fits. Bring us your database and we'll show you what's in it.</p>
+        <a href="#book">Book a call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-h">Installed in your business in <em>weeks</em>, not quarters.</h2>
+    </div>
+    <div class="how">
+      <div class="step reveal">
+        <div class="when">Weeks 1–2 · Plug in</div>
+        <h3>We connect, you approve</h3>
+        <p>We wire into your CRM and lead sources, register your texting numbers with the carriers under your business name, and clean the list. You sign off on every script before anything sends.</p>
+      </div>
+      <div class="step reveal">
+        <div class="when">Launch · Messages go live</div>
+        <h3>Nothing slips again</h3>
+        <p>New leads answered in under 60 seconds around the clock. The old database starts a reactivation campaign that texts like a person, not a blast.</p>
+      </div>
+      <div class="step reveal">
+        <div class="when">Weeks 3–6 · Sits land</div>
+        <h3>The calendar fills itself</h3>
+        <p>Qualified appointments book straight onto your closers' calendars, with reminders that cut no-shows. Ambiguous replies route to a human.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STANCE ============ -->
+<section aria-labelledby="stance-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How we price and behave</span>
+      <h2 id="stance-h">Outcomes over activity. <em>Always.</em></h2>
+    </div>
+    <div class="stance">
+      <div class="tenet reveal">
+        <h3><span class="ok">✓</span>We count sits, not "bookings"</h3>
+        <p>An appointment counts when a qualified decision-maker actually sits — reconfirmed, transcript attached. No-shows get replaced, not tallied.</p>
+      </div>
+      <div class="tenet reveal">
+        <h3><span class="ok">✓</span>Guarantees in writing</h3>
+        <p>Every engagement is built around a written outcome guarantee. If we miss it, we keep working at no charge until we hit it.</p>
+      </div>
+      <div class="tenet reveal">
+        <h3><span class="ok">✓</span>Compliant by design</h3>
+        <p>Carrier-registered numbers in your name, first-party lists only, instant opt-outs, business-hours sending, and a full message log you own.</p>
+      </div>
+      <div class="tenet reveal">
+        <h3><span class="ok">✓</span>Your brand, protected</h3>
+        <p>You approve every script before it sends. The sender is identified in every thread. Your company is never the test case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDERS ============ -->
+<section id="founders" aria-labelledby="founders-h">
+  <div class="wrap">
+    <div class="founder reveal">
+      <div class="founder-photos">
+        <figure>
+          <img src="assets/preston-headshot.jpg" alt="Preston Whitty, founder of Retap Media">
+          <figcaption>Preston Whitty</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/patrick-headshot.jpg" alt="Patrick Viau, founder of Retap Media">
+          <figcaption>Patrick Viau</figcaption>
+        </figure>
+      </div>
+      <div>
+        <h3 id="founders-h">The people behind the engine.</h3>
+        <p>We're Preston Whitty and Patrick Viau — a two-man team that builds appointment systems for home-services companies, because the operators doing the best work are usually the ones losing the most deals to follow-up that stops at voicemail number one. We keep the client list small so every build gets our full attention, and every campaign we run is one we'd put our own names on — literally, since they're right here.</p>
+        <p class="sig">— Preston &amp; Patrick</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <div class="book reveal">
+      <span class="eyebrow">Next step</span>
+      <h2 id="book-h">Find out what's <em>sleeping</em> in your CRM.</h2>
+      <p>A 30-minute call: we look at your lead-list size, your close rate, and your average ticket, and show you — with your numbers, not ours — what a reactivation engine would be worth in your business.</p>
+      <a class="btn btn-gold" id="book-tel" href="#" hidden>Call us now</a>
+      <a class="btn btn-gold" id="book-mailto" href="mailto:prestonmwaia@gmail.com?subject=Strategy%20call%20request&body=Hi%20Preston%2C%20I%27d%20like%20to%20talk%20about%20what%27s%20in%20our%20database.%20Company%2C%20trade%2C%20and%20rough%20lead-list%20size%3A%20">Request a Strategy Call</a>
+      <div id="calendar-embed" hidden></div>
+      <p class="fine">No pitch deck required on your side — just an idea of how many leads you're sitting on.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="foot-brand">
+        <svg viewBox="0 0 940 400" role="img" aria-label="Retap Media logo">
+          <path d="M 40 90 L 155 330 L 260 150 L 365 330 L 436.3 168.8" fill="none" stroke="#F2EDE3" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 411 226 L 480 70 L 595 230 L 710 70 L 850 330" fill="none" stroke="#D4AF37" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">RETAP&nbsp;<b>MEDIA</b></span>
+      </div>
+      <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.</small>
+    </div>
+    <small>
+      Verticals<br>
+      <a href="https://solaraiflow.com/">The Solar Appointment Engine</a><br>
+      Pools &amp; spas — opening next<br>
+      Generators · HVAC — in build
+    </small>
+    <small>
+      Contact<br>
+      <a href="mailto:prestonmwaia@gmail.com">prestonmwaia@gmail.com</a><br>
+      <a href="#book">Book a strategy call</a>
+    </small>
+  </div>
+</footer>
+
+<script>
+  /* ==========================================================================
+     EDIT THIS BLOCK ONLY. Fill in a value and its feature appears; leave it
+     empty and the fallback stays. Same pattern as the solar site.
+     ========================================================================== */
+  var CONTENT = {
+    // GoHighLevel calendar permalink, e.g.
+    // "https://api.leadconnectorhq.com/widget/booking/XXXXXXXX".
+    // Embeds the calendar in the Book section and hides the email button.
+    ghlCalendarUrl: "",
+
+    // Direct line, e.g. "(813) 555-0123". Swaps the email button for a call button.
+    phoneNumber: ""
+  };
+
+  (function applyContent(c) {
+    if (c.ghlCalendarUrl) {
+      var slot = document.getElementById('calendar-embed');
+      var frame = document.createElement('iframe');
+      frame.src = c.ghlCalendarUrl;
+      frame.style.cssText = 'width:100%;max-width:760px;height:720px;border:none;border-radius:8px;background:transparent';
+      frame.title = 'Book a strategy call';
+      slot.appendChild(frame);
+      slot.hidden = false;
+      document.getElementById('book-mailto').hidden = true;
+    }
+    if (c.phoneNumber) {
+      var tel = document.getElementById('book-tel');
+      tel.href = 'tel:' + c.phoneNumber.replace(/[^+\d]/g, '');
+      tel.textContent = 'Call us: ' + c.phoneNumber;
+      tel.hidden = false;
+      if (!c.ghlCalendarUrl) document.getElementById('book-mailto').hidden = true;
+    }
+  })(CONTENT);
+
+  // sticky nav hairline
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', scrollY > 8);
+  }, { passive: true });
+
+  // reveal on scroll
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* signature: ledger rows re-light one at a time */
+  (function ledger() {
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.lrow'));
+    var sum = document.getElementById('ledger-sum');
+    var lit = 0;
+    var relights = [
+      { i: 1, st: 'REACTIVATED · booked Tue 5:30', val: 18400 },
+      { i: 3, st: 'REACTIVATED · booked Sat 11:00', val: 42900 },
+      { i: 0, st: 'REACTIVATED · booked Thu 4:15', val: 71300 }
+    ];
+    function money(n){ return '$' + n.toLocaleString('en-US') + ' re-earned'; }
+    if (reduce) {
+      // static version: show the end state of the first relight
+      var r = rows[relights[0].i];
+      r.classList.remove('dead'); r.classList.add('lit');
+      r.querySelector('.st').textContent = relights[0].st;
+      sum.textContent = money(relights[0].val);
+      sum.style.color = 'var(--green)';
+      return;
+    }
+    var k = 0;
+    setInterval(function () {
+      if (k >= relights.length) return;
+      var job = relights[k++];
+      var row = rows[job.i];
+      row.classList.remove('dead');
+      row.classList.add('lit');
+      row.querySelector('.st').textContent = job.st;
+      sum.textContent = money(job.val);
+      sum.style.color = 'var(--green)';
+    }, 2600);
+  })();
+</script>
+</body>
+</html>
