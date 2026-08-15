@@ -47,7 +47,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What does Retap Media do?", "acceptedAnswer": { "@type": "Answer", "text": "We build appointment systems for home-services companies. The core is database reactivation: compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites." } },
+    { "@type": "Question", "name": "What does Retap Media do?", "acceptedAnswer": { "@type": "Answer", "text": "We build appointment systems for home-services companies. The core is database reactivation: compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites. One system, one outcome — not a menu." } },
     { "@type": "Question", "name": "What is database reactivation?", "acceptedAnswer": { "@type": "Answer", "text": "Every business that buys leads has a CRM full of contacts that got one call and went quiet. Database reactivation is a structured campaign that re-opens those conversations — messages that read like a person wrote them, sent from numbers registered to your business — and works every reply to a booked appointment or a clean no. The leads are already paid for, so recovered deals carry near-zero acquisition cost." } },
     { "@type": "Question", "name": "Do I need to buy new leads or increase ad spend?", "acceptedAnswer": { "@type": "Answer", "text": "No. The system points at the lead list you already own. Zero new ad spend is the core of the offer — we work with businesses that have 500 or more leads sitting in their database." } },
     { "@type": "Question", "name": "Is the texting compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Compliance is built in: numbers are carrier-registered to your business, we only message first-party contacts who gave your company their information, opt-outs are honored instantly in any wording, messages send during business hours only, and you own the full consent and message log." } },
@@ -221,6 +221,22 @@
     .layer .tag{order:-1}
   }
 
+  /* ---------- metro exclusivity band ---------- */
+  .metro{
+    background:linear-gradient(180deg,rgba(212,175,55,.07),var(--panel));
+    border:1px solid rgba(212,175,55,.35);border-radius:10px;
+    padding:clamp(34px,5vw,56px);text-align:center;
+  }
+  .metro h2{
+    font-family:var(--display);font-weight:500;font-size:clamp(28px,4.2vw,46px);
+    color:#F5F2E9;line-height:1.1;letter-spacing:-.01em;
+  }
+  .metro h2 em{font-style:italic;color:var(--gold);font-weight:600}
+  .metro p{color:var(--muted);max-width:58ch;margin:18px auto 24px;font-size:17px}
+  .metro p strong{color:var(--body);font-weight:500}
+  .metro a.check{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--gold)}
+  .metro a.check:hover{color:var(--gold-light)}
+
   /* ---------- niches ---------- */
   .niches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media (max-width:900px){.niches{grid-template-columns:repeat(2,1fr)}}
@@ -339,7 +355,7 @@
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
       <a href="#founders">Who We Are</a>
-      <a class="btn btn-gold" href="#book">Book a Call</a>
+      <a class="btn btn-gold" href="#book">Free Database Audit</a>
     </nav>
   </div>
 </header>
@@ -350,9 +366,9 @@
     <div>
       <span class="eyebrow">Retap Media · For home-services companies</span>
       <h1>The cheapest appointment you'll ever book is already <em>in your CRM.</em></h1>
-      <p class="hero-sub">Every lead you've ever paid for is still sitting in your database. We build the systems that go back for them — <strong>compliant reactivation campaigns, under-60-second AI follow-up, and booking funnels</strong> that turn dead lead lists into sat appointments. You did the spending. We do the retapping.</p>
+      <p class="hero-sub">Every lead you've ever paid for is still sitting in your database. We built Retap because the money most businesses need next isn't in more ads — it's in the CRM they already paid to fill. So we build the systems that go back for it: <strong>compliant reactivation campaigns, under-60-second AI follow-up, and booking funnels</strong> that turn dead lead lists into sat appointments. You did the spending. We do the retapping.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="#book">Book a Strategy Call</a>
+        <a class="btn btn-gold" href="#book">Get Your Free 48-Hour Database Audit</a>
         <a class="btn btn-ghost" href="#stack">See the Full Stack</a>
       </div>
       <p class="hero-note">For businesses with 500+ leads in their database. One company per trade, per metro. No long-term contracts.</p>
@@ -414,7 +430,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">The full stack</span>
       <h2 id="stack-h">One engine. Every layer between a lead and a <em>sat appointment.</em></h2>
-      <p class="sec-lead">Everything plugs into the CRM and lead flow you already run — nothing gets ripped out, nothing changes for your sales process. Appointments appear on your closers' calendars.</p>
+      <p class="sec-lead">Everything plugs into the CRM and lead flow you already run — nothing gets ripped out, nothing changes for your sales process. Appointments appear on your closers' calendars. To be clear: we sell <strong style="color:var(--body)">one outcome</strong> — booked revenue from the leads and customers you already own. The five layers are how the engine delivers it, not five things to buy.</p>
     </div>
     <div class="stack">
       <div class="layer core reveal">
@@ -442,6 +458,18 @@
         <span class="tag">Front door</span>
         <p>Fast, focused sites built to catch the demand the campaigns create — estimator tools, booking flows, and proof, not brochures.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METRO EXCLUSIVITY ============ -->
+<section aria-labelledby="metro-h">
+  <div class="wrap">
+    <div class="metro reveal">
+      <span class="eyebrow">One per trade · One per metro</span>
+      <h2 id="metro-h">When you sign, your metro <em>closes</em> behind you.</h2>
+      <p>We take <strong>one company per trade, per metro</strong> — so every appointment the engine books in your market is yours, and we never sit across the table from your competitor. <strong>Most metros are still open.</strong> Once yours isn't, it isn't.</p>
+      <a class="check" href="#book">Check if your metro is open →</a>
     </div>
   </div>
 </section>
@@ -551,7 +579,7 @@
     <div class="faq reveal">
       <details>
         <summary>What does Retap Media do?</summary>
-        <p class="a">We build appointment systems for home-services companies. The core is database reactivation — compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites.</p>
+        <p class="a">We build appointment systems for home-services companies. The core is database reactivation — compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites. One system, one outcome — not a menu.</p>
       </details>
       <details>
         <summary>What is database reactivation?</summary>
@@ -610,9 +638,10 @@
     <div class="book reveal">
       <span class="eyebrow">Next step</span>
       <h2 id="book-h">Find out what's <em>sleeping</em> in your CRM.</h2>
-      <p>A 30-minute call: we look at your lead-list size, your close rate, and your average ticket, and show you — with your numbers, not ours — what a reactivation engine would be worth in your business.</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--champagne)">Every engagement carries a written, numbered appointment guarantee — if we miss it, we keep working at no charge until we hit it.</strong> The risk sits with us. That's the point.</p>
+      <p>The free 48-hour database audit: send us your lead-list size, cost per lead, close rate, and average ticket — five questions, two minutes. Within 48 hours you get the dollar figure you've already spent, what those leads are still worth in sat appointments, and a sample of the first message we'd send. Your numbers, not ours. No pitch required to get it.</p>
       <a class="btn btn-gold" id="book-tel" href="#" hidden>Call us now</a>
-      <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Strategy%20call%20request&body=Hi%20Preston%2C%20I%27d%20like%20to%20talk%20about%20what%27s%20in%20our%20database.%20Company%2C%20trade%2C%20and%20rough%20lead-list%20size%3A%20">Request a Strategy Call</a>
+      <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Free%2048-hour%20database%20audit&body=Hi%20Preston%2C%20run%20the%20audit%20on%20our%20database.%0ACompany%20and%20trade%3A%20%0ALeads%20in%20our%20CRM%20(rough)%3A%20%0AAverage%20cost%20per%20lead%3A%20%0AClose%20rate%20on%20sat%20appointments%3A%20%0AAverage%20ticket%3A%20">Start My Free Audit</a>
       <div id="calendar-embed" hidden></div>
       <p class="fine">No pitch deck required on your side — just an idea of how many leads you're sitting on.</p>
     </div>
@@ -629,8 +658,8 @@
       <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.</small>
     </div>
     <small>
-      Verticals<br>
-      <a href="https://solaraiflow.com/">The Solar Appointment Engine</a><br>
+      Verticals — one company per metro<br>
+      <a href="https://solaraiflow.com/">The Solar Appointment Engine</a> — your metro may still be open<br>
       Pools &amp; spas — opening next<br>
       Generators · HVAC — in build
     </small>
