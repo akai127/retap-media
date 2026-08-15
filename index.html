@@ -19,11 +19,34 @@
   "name": "Retap Media",
   "legalName": "Retap Media LLC",
   "url": "https://retapmedia.com/",
-  "email": "prestonmwaia@gmail.com",
+  "email": "preston@retapmedia.com",
+  "logo": "https://retapmedia.com/assets/retap-lockup-full.png",
   "description": "Appointment systems for home-services companies: database reactivation, AI follow-up, and booking funnels that monetize the leads businesses already paid for.",
   "areaServed": { "@type": "Country", "name": "United States" },
   "knowsAbout": ["database reactivation", "lead follow-up", "appointment booking", "speed to lead", "AI receptionist", "home services marketing"],
-  "brand": [{ "@type": "Brand", "name": "The Solar Appointment Engine", "url": "https://solaraiflow.com/" }]
+  "brand": [{ "@type": "Brand", "name": "The Solar Appointment Engine", "url": "https://solaraiflow.com/" }],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Database reactivation", "description": "Compliant campaigns that revive dead CRM leads and book them as qualified appointments." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed-to-lead follow-up", "description": "Every new lead answered in under 60 seconds, 24/7, then worked through a full multi-touch sequence." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI receptionist", "description": "Inbound calls answered, qualified, and booked directly onto the calendar." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Booking and nurture funnels", "description": "CRM pipelines that confirm, remind, and reschedule to cut no-shows." } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conversion websites", "description": "Fast, focused sites built to convert the demand campaigns create." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What does Retap Media do?", "acceptedAnswer": { "@type": "Answer", "text": "We build appointment systems for home-services companies. The core is database reactivation: compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites." } },
+    { "@type": "Question", "name": "What is database reactivation?", "acceptedAnswer": { "@type": "Answer", "text": "Every business that buys leads has a CRM full of contacts that got one call and went quiet. Database reactivation is a structured campaign that re-opens those conversations — messages that read like a person wrote them, sent from numbers registered to your business — and works every reply to a booked appointment or a clean no. The leads are already paid for, so recovered deals carry near-zero acquisition cost." } },
+    { "@type": "Question", "name": "Do I need to buy new leads or increase ad spend?", "acceptedAnswer": { "@type": "Answer", "text": "No. The system points at the lead list you already own. Zero new ad spend is the core of the offer — we work with businesses that have 500 or more leads sitting in their database." } },
+    { "@type": "Question", "name": "Is the texting compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Compliance is built in: numbers are carrier-registered to your business, we only message first-party contacts who gave your company their information, opt-outs are honored instantly in any wording, messages send during business hours only, and you own the full consent and message log." } },
+    { "@type": "Question", "name": "How fast can we launch?", "acceptedAnswer": { "@type": "Answer", "text": "Roughly two weeks from signing: we connect your CRM and lead sources, register your texting numbers with the carriers, clean the list, and get your sign-off on every script. Then messages go live and reactivated appointments typically start booking within the first week." } },
+    { "@type": "Question", "name": "Which industries do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "Residential solar is live today through the Solar Appointment Engine at solaraiflow.com. Pools and spas open next, with generator dealers and HVAC in the build queue. If your business buys leads, runs a CRM, and closes in-home or over the phone, the engine fits." } },
+    { "@type": "Question", "name": "Do you replace my CRM or my sales team?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything plugs into the CRM and sales process you already run. Your closers keep closing — the system fills their calendar with qualified, confirmed appointments and hands ambiguous replies to a human." } }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,6 +250,22 @@
   .tenet h3 .ok{color:var(--green);font-family:var(--mono);margin-right:6px}
   .tenet p{font-size:14px;color:var(--muted)}
 
+  /* ---------- faq ---------- */
+  .faq{max-width:760px}
+  .faq details{
+    background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;
+    margin-bottom:10px;overflow:hidden;
+  }
+  .faq details[open]{border-color:var(--hairline)}
+  .faq summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;
+    align-items:baseline;padding:18px 22px;font-weight:600;font-size:16px;color:#F5F2E9;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";font-family:var(--mono);color:var(--gold);flex:none}
+  .faq details[open] summary:after{content:"–"}
+  .faq .a{padding:0 22px 20px;color:var(--muted);font-size:15px;max-width:64ch}
+
   /* ---------- founders ---------- */
   .founder{
     display:flex;gap:36px;align-items:center;
@@ -290,6 +329,7 @@
       <a href="#stack">The Stack</a>
       <a href="#niches">Industries</a>
       <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
       <a href="#founders">Who We Are</a>
       <a class="btn btn-gold" href="#book">Book a Call</a>
     </nav>
@@ -493,6 +533,46 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Questions, answered straight</span>
+      <h2 id="faq-h">What owners ask us <em>first.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>What does Retap Media do?</summary>
+        <p class="a">We build appointment systems for home-services companies. The core is database reactivation — compliant text and email campaigns that go back through the leads you already paid for and turn them into booked, qualified appointments — plus under-60-second follow-up on new leads, an AI receptionist, booking funnels, and conversion websites.</p>
+      </details>
+      <details>
+        <summary>What is database reactivation?</summary>
+        <p class="a">Every business that buys leads has a CRM full of contacts that got one call and went quiet. Reactivation is a structured campaign that re-opens those conversations — messages that read like a person wrote them, sent from numbers registered to your business — and works every reply to a booked appointment or a clean no. The leads are already paid for, so recovered deals carry near-zero acquisition cost.</p>
+      </details>
+      <details>
+        <summary>Do I need to buy new leads or increase ad spend?</summary>
+        <p class="a">No. The system points at the lead list you already own. Zero new ad spend is the core of the offer — we work with businesses that have 500+ leads sitting in their database.</p>
+      </details>
+      <details>
+        <summary>Is the texting compliant?</summary>
+        <p class="a">Compliance is built in: numbers carrier-registered to your business, first-party contacts only, opt-outs honored instantly in any wording, business-hours sending, and a full consent and message log that you own.</p>
+      </details>
+      <details>
+        <summary>How fast can we launch?</summary>
+        <p class="a">Roughly two weeks from signing: we connect your CRM and lead sources, register your texting numbers with the carriers, clean the list, and get your sign-off on every script. Reactivated appointments typically start booking within the first week of messages going live.</p>
+      </details>
+      <details>
+        <summary>Which industries do you work with?</summary>
+        <p class="a">Residential solar is live today through <a href="https://solaraiflow.com/">the Solar Appointment Engine</a>. Pools &amp; spas open next; generator dealers and HVAC are in the build queue. If your business buys leads, runs a CRM, and closes in-home or over the phone, the engine fits.</p>
+      </details>
+      <details>
+        <summary>Do you replace my CRM or my sales team?</summary>
+        <p class="a">No. Everything plugs into the CRM and sales process you already run. Your closers keep closing — the system fills their calendar with qualified, confirmed appointments and routes ambiguous replies to a human.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOUNDERS ============ -->
 <section id="founders" aria-labelledby="founders-h">
   <div class="wrap">
@@ -524,7 +604,7 @@
       <h2 id="book-h">Find out what's <em>sleeping</em> in your CRM.</h2>
       <p>A 30-minute call: we look at your lead-list size, your close rate, and your average ticket, and show you — with your numbers, not ours — what a reactivation engine would be worth in your business.</p>
       <a class="btn btn-gold" id="book-tel" href="#" hidden>Call us now</a>
-      <a class="btn btn-gold" id="book-mailto" href="mailto:prestonmwaia@gmail.com?subject=Strategy%20call%20request&body=Hi%20Preston%2C%20I%27d%20like%20to%20talk%20about%20what%27s%20in%20our%20database.%20Company%2C%20trade%2C%20and%20rough%20lead-list%20size%3A%20">Request a Strategy Call</a>
+      <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Strategy%20call%20request&body=Hi%20Preston%2C%20I%27d%20like%20to%20talk%20about%20what%27s%20in%20our%20database.%20Company%2C%20trade%2C%20and%20rough%20lead-list%20size%3A%20">Request a Strategy Call</a>
       <div id="calendar-embed" hidden></div>
       <p class="fine">No pitch deck required on your side — just an idea of how many leads you're sitting on.</p>
     </div>
@@ -548,7 +628,7 @@
     </small>
     <small>
       Contact<br>
-      <a href="mailto:prestonmwaia@gmail.com">prestonmwaia@gmail.com</a><br>
+      <a href="mailto:preston@retapmedia.com">preston@retapmedia.com</a><br>
       <a href="#book">Book a strategy call</a>
     </small>
   </div>
