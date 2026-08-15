@@ -669,8 +669,8 @@
       <h2 id="book-h">Find out what's <em>sleeping</em> in your CRM.</h2>
       <p style="margin-bottom:10px"><strong style="color:var(--champagne)">Every engagement carries a written, numbered appointment guarantee — if we miss it, we keep working at no charge until we hit it.</strong> The risk sits with us. That's the point.</p>
       <p>The free 48-hour database audit: send us your lead-list size, cost per lead, close rate, and average ticket — five questions, two minutes. Within 48 hours you get the dollar figure you've already spent, what those leads are still worth in sat appointments, and a sample of the first message we'd send. Your numbers, not ours. No pitch required to get it.</p>
-      <a class="btn btn-gold" id="book-tel" href="#" hidden>Call us now</a>
       <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Free%2048-hour%20database%20audit&body=Hi%20Preston%2C%20run%20the%20audit%20on%20our%20database.%0ACompany%20and%20trade%3A%20%0ALeads%20in%20our%20CRM%20(rough)%3A%20%0AAverage%20cost%20per%20lead%3A%20%0AClose%20rate%20on%20sat%20appointments%3A%20%0AAverage%20ticket%3A%20">Start My Free Audit</a>
+      <a class="btn btn-ghost" id="book-tel" href="#" hidden style="margin-left:10px">Call us</a>
       <div id="calendar-embed" hidden></div>
       <p class="fine">No pitch deck required on your side — just an idea of how many leads you're sitting on.</p>
     </div>
@@ -695,7 +695,8 @@
     <small>
       Contact<br>
       <a href="mailto:preston@retapmedia.com">preston@retapmedia.com</a><br>
-      <a href="#book">Book a strategy call</a>
+      <a href="tel:+13212157267">(321) 215-7267</a><br>
+      <a href="#book">Start the free audit</a>
     </small>
   </div>
 </footer>
@@ -711,8 +712,8 @@
     // Embeds the calendar in the Book section and hides the email button.
     ghlCalendarUrl: "",
 
-    // Direct line, e.g. "(813) 555-0123". Swaps the email button for a call button.
-    phoneNumber: "",
+    // Direct line. Shows a call button NEXT TO the audit button (never replaces it).
+    phoneNumber: "(321) 215-7267",
 
     // REAL clients only — never invent these (FTC fake-review rule + our own
     // brand doctrine). Each entry becomes a card in the Results section.
@@ -735,9 +736,9 @@
     if (c.phoneNumber) {
       var tel = document.getElementById('book-tel');
       tel.href = 'tel:' + c.phoneNumber.replace(/[^+\d]/g, '');
-      tel.textContent = 'Call us: ' + c.phoneNumber;
+      tel.textContent = 'Or call: ' + c.phoneNumber;
+      tel.className = 'btn btn-ghost';
       tel.hidden = false;
-      if (!c.ghlCalendarUrl) document.getElementById('book-mailto').hidden = true;
     }
     if (c.testimonials.length) {
       var grid = document.getElementById('results-grid');
