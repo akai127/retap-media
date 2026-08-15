@@ -147,6 +147,16 @@
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
   .hero-note{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
 
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .ledger{justify-self:start;max-width:100%}
+  }
+  @media (max-width:700px){
+    .stats-inner{grid-template-columns:1fr}
+    .stat{border-left:none;border-top:1px solid var(--hairline);padding:24px 4px}
+    .stat:first-child{border-top:none}
+  }
+
   /* ---------- signature: the ledger ---------- */
   .ledger{
     background:var(--panel);border:1px solid rgba(212,175,55,.16);border-radius:10px;
@@ -366,12 +376,12 @@
     <div>
       <span class="eyebrow">Retap Media · For home-services companies</span>
       <h1>The cheapest appointment you'll ever book is already <em>in your CRM.</em></h1>
-      <p class="hero-sub">Every lead you've ever paid for is still sitting in your database. We built Retap because the money most businesses need next isn't in more ads — it's in the CRM they already paid to fill. So we build the systems that go back for it: <strong>compliant reactivation campaigns, under-60-second AI follow-up, and booking funnels</strong> that turn dead lead lists into sat appointments. You did the spending. We do the retapping.</p>
+      <p class="hero-sub">The money most businesses need next isn't in more ads. It's in the leads they already paid for, sitting untouched in the CRM. We build the systems that go back for them: <strong>compliant reactivation campaigns, under-60-second follow-up, and booking funnels</strong> that turn a dead database into sat appointments. You did the spending. We do the retapping.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#book">Get Your Free 48-Hour Database Audit</a>
         <a class="btn btn-ghost" href="#stack">See the Full Stack</a>
       </div>
-      <p class="hero-note">For businesses with 500+ leads in their database. One company per trade, per metro. No long-term contracts.</p>
+      <p class="hero-note">For businesses with 500+ leads in their database. No long-term contracts.</p>
     </div>
     <div class="ledger" aria-label="Example CRM lead list being reactivated">
       <div class="ledger-head">
@@ -430,7 +440,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">The full stack</span>
       <h2 id="stack-h">One engine. Every layer between a lead and a <em>sat appointment.</em></h2>
-      <p class="sec-lead">Everything plugs into the CRM and lead flow you already run — nothing gets ripped out, nothing changes for your sales process. Appointments appear on your closers' calendars. To be clear: we sell <strong style="color:var(--body)">one outcome</strong> — booked revenue from the leads and customers you already own. The five layers are how the engine delivers it, not five things to buy.</p>
+      <p class="sec-lead">We sell <strong style="color:var(--body)">one outcome</strong>: booked revenue from the database you already have. The five layers below are how the engine delivers it — not five things to buy. Everything plugs into the CRM and sales process you run today, and qualified appointments appear on your closers' calendars.</p>
     </div>
     <div class="stack">
       <div class="layer core reveal">
@@ -480,35 +490,38 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Industries</span>
       <h2 id="niches-h">The same engine, tuned <em>per trade.</em></h2>
-      <p class="sec-lead">We build one vertical at a time, deep — real qualification criteria, real seasonality, real compliance — instead of a thin template across fifty industries. And we take <strong style="color:var(--body)">one company per trade, per metro</strong>: your market is either yours or your competitor's.</p>
+      <p class="sec-lead">The engine is trade-agnostic: if your business buys leads and closes on estimates or consults, it already fits. What we build per vertical is the <strong style="color:var(--body)">playbook</strong> — qualification criteria, seasonality, compliance, scripts. Solar got ours first. Yours gets built at your onboarding.</p>
     </div>
     <div class="niches">
       <div class="niche live reveal">
-        <span class="status">● Live now</span>
+        <span class="status">● Flagship vertical</span>
         <h3>Residential solar</h3>
         <p>The Solar Appointment Engine: follow-up and database reactivation for installers — 10+ qualified, sat appointments in the first 90 days, guaranteed in writing.</p>
         <a href="https://solaraiflow.com/">solaraiflow.com →</a>
       </div>
       <div class="niche reveal">
-        <span class="status">Opening next</span>
+        <span class="status">Metros open · Sep–Feb season</span>
         <h3>Pools &amp; spas</h3>
-        <p>Built for the September–February buying season: revive quote-and-vanish leads before your competitors' first postcard lands.</p>
+        <p>Built for the buying season ahead: revive quote-and-vanish leads before your competitors' first postcard lands.</p>
+        <a href="#book">Claim your metro →</a>
       </div>
       <div class="niche reveal">
-        <span class="status">In the build queue</span>
+        <span class="status">Metros open</span>
         <h3>Generator dealers</h3>
         <p>Storm-season demand, high tickets, and databases full of homeowners who asked for a quote and never got a second call.</p>
+        <a href="#book">Claim your metro →</a>
       </div>
       <div class="niche reveal">
-        <span class="status">In the build queue</span>
+        <span class="status">Metros open</span>
         <h3>HVAC</h3>
         <p>Replacement quotes go cold in days. The engine keeps every estimate alive until the homeowner decides — with you, not the other bid.</p>
+        <a href="#book">Claim your metro →</a>
       </div>
       <div class="niche reveal">
         <span class="status">Your trade</span>
         <h3>Something else?</h3>
-        <p>If you buy leads, run a CRM, and close in-home or over the phone, the engine fits. Bring us your database and we'll show you what's in it.</p>
-        <a href="#book">Book a call →</a>
+        <p>If you buy leads, run a CRM, and close in-home or over the phone, the engine fits — your trade's playbook gets built at onboarding. Bring us your database.</p>
+        <a href="#book">Start with the audit →</a>
       </div>
     </div>
   </div>
@@ -555,7 +568,7 @@
       </div>
       <div class="tenet reveal">
         <h3><span class="ok">✓</span>Guarantees in writing</h3>
-        <p>Every engagement is built around a written outcome guarantee. If we miss it, we keep working at no charge until we hit it.</p>
+        <p>Every engagement is built around a written outcome number. Miss it, and the bill stops until we've hit it.</p>
       </div>
       <div class="tenet reveal">
         <h3><span class="ok">✓</span>Compliant by design</h3>
@@ -609,6 +622,17 @@
   </div>
 </section>
 
+<!-- ============ RESULTS (hidden until CONTENT.testimonials has entries) ============ -->
+<section id="results" aria-labelledby="results-h" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Results</span>
+      <h2 id="results-h">Databases we've put back to <em>work.</em></h2>
+    </div>
+    <div class="niches" id="results-grid"></div>
+  </div>
+</section>
+
 <!-- ============ FOUNDERS ============ -->
 <section id="founders" aria-labelledby="founders-h">
   <div class="wrap">
@@ -658,10 +682,10 @@
       <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.</small>
     </div>
     <small>
-      Verticals — one company per metro<br>
-      <a href="https://solaraiflow.com/">The Solar Appointment Engine</a> — your metro may still be open<br>
-      Pools &amp; spas — opening next<br>
-      Generators · HVAC — in build
+      Verticals<br>
+      <a href="https://solaraiflow.com/">The Solar Appointment Engine</a><br>
+      Pools &amp; spas · Generators · HVAC<br>
+      — metros open in each
     </small>
     <small>
       Contact<br>
@@ -683,7 +707,13 @@
     ghlCalendarUrl: "",
 
     // Direct line, e.g. "(813) 555-0123". Swaps the email button for a call button.
-    phoneNumber: ""
+    phoneNumber: "",
+
+    // REAL clients only — never invent these (FTC fake-review rule + our own
+    // brand doctrine). Each entry becomes a card in the Results section.
+    // Example: { company: "Sun Coast Solar — Tampa", result: "17 sat appointments in 74 days",
+    //            quote: "The old database paid for the whole quarter." }
+    testimonials: []
   };
 
   (function applyContent(c) {
@@ -703,6 +733,23 @@
       tel.textContent = 'Call us: ' + c.phoneNumber;
       tel.hidden = false;
       if (!c.ghlCalendarUrl) document.getElementById('book-mailto').hidden = true;
+    }
+    if (c.testimonials.length) {
+      var grid = document.getElementById('results-grid');
+      c.testimonials.forEach(function (t) {
+        var card = document.createElement('div');
+        card.className = 'niche';
+        var s = document.createElement('span');
+        s.className = 'status';
+        s.textContent = t.company;
+        var h = document.createElement('h3');
+        h.textContent = t.result;
+        var p = document.createElement('p');
+        p.textContent = t.quote ? '“' + t.quote + '”' : '';
+        card.appendChild(s); card.appendChild(h); card.appendChild(p);
+        grid.appendChild(card);
+      });
+      document.getElementById('results').hidden = false;
     }
   })(CONTENT);
 
