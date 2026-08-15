@@ -224,9 +224,11 @@
   .layer h3{font-size:17.5px;font-weight:600;color:#F5F2E9}
   .layer p{grid-column:2;font-size:14.5px;color:var(--muted);max-width:64ch}
   .layer .tag{
+    grid-column:3;grid-row:1;justify-self:end;align-self:baseline;
     font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--gold);white-space:nowrap;
   }
+  .layer p{grid-row:1}
   .layer.core .tag{color:#151102;background:var(--gold);border-radius:999px;padding:3px 10px}
   @media (max-width:640px){
     .layer{grid-template-columns:1fr}
