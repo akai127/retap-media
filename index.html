@@ -338,6 +338,28 @@
   .book .fine{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.04em}
   #calendar-embed{margin-top:30px}
 
+  /* ---------- booking modal ---------- */
+  .modal{
+    position:fixed;inset:0;z-index:100;display:none;
+    align-items:center;justify-content:center;padding:20px;
+    background:rgba(10,10,11,.82);backdrop-filter:blur(5px);
+  }
+  .modal.open{display:flex}
+  .modal-box{
+    background:#fff;border-radius:12px;position:relative;overflow:hidden;
+    width:min(780px,100%);height:min(740px,92vh);
+    box-shadow:0 30px 90px rgba(0,0,0,.6);
+  }
+  .modal-box iframe{width:100%;height:100%;border:none;display:block}
+  .modal-close{
+    position:absolute;top:8px;right:8px;z-index:2;
+    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    background:#0A0A0B;color:#F1D77E;font-size:18px;line-height:1;
+  }
+  .book-alt{font-size:13.5px;color:var(--muted);margin-top:16px}
+  .book-alt a{color:var(--muted);text-decoration:underline}
+  .book-alt a:hover{color:var(--gold-light)}
+
   /* ---------- footer ---------- */
   footer{margin-top:96px;border-top:1px solid var(--hairline);padding:44px 0 56px}
   .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
@@ -669,9 +691,10 @@
       <h2 id="book-h">Find out what's <em>sleeping</em> in your CRM.</h2>
       <p style="margin-bottom:10px"><strong style="color:var(--champagne)">Every engagement carries a written, numbered appointment guarantee — if we miss it, we keep working at no charge until we hit it.</strong> The risk sits with us. That's the point.</p>
       <p>The free 48-hour database audit: send us your lead-list size, cost per lead, close rate, and average ticket — five questions, two minutes. Within 48 hours you get the dollar figure you've already spent, what those leads are still worth in sat appointments, and a sample of the first message we'd send. Your numbers, not ours. No pitch required to get it.</p>
-      <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Free%2048-hour%20database%20audit&body=Hi%20Preston%2C%20run%20the%20audit%20on%20our%20database.%0ACompany%20and%20trade%3A%20%0ALeads%20in%20our%20CRM%20(rough)%3A%20%0AAverage%20cost%20per%20lead%3A%20%0AClose%20rate%20on%20sat%20appointments%3A%20%0AAverage%20ticket%3A%20">Start My Free Audit</a>
+      <a class="btn btn-gold" id="book-open" href="#" hidden>Book My Audit Call</a>
       <a class="btn btn-ghost" id="book-tel" href="#" hidden style="margin-left:10px">Call us</a>
-      <div id="calendar-embed" hidden></div>
+      <a class="btn btn-gold" id="book-mailto" href="mailto:preston@retapmedia.com?subject=Free%2048-hour%20database%20audit&body=Hi%20Preston%2C%20run%20the%20audit%20on%20our%20database.%0ACompany%20and%20trade%3A%20%0ALeads%20in%20our%20CRM%20(rough)%3A%20%0AAverage%20cost%20per%20lead%3A%20%0AClose%20rate%20on%20sat%20appointments%3A%20%0AAverage%20ticket%3A%20">Start My Free Audit</a>
+      <p class="book-alt" id="book-alt" hidden>Prefer email? <a href="mailto:preston@retapmedia.com?subject=Free%2048-hour%20database%20audit&body=Hi%20Preston%2C%20run%20the%20audit%20on%20our%20database.%0ACompany%20and%20trade%3A%20%0ALeads%20in%20our%20CRM%20(rough)%3A%20%0AAverage%20cost%20per%20lead%3A%20%0AClose%20rate%20on%20sat%20appointments%3A%20%0AAverage%20ticket%3A%20">Start the audit by email</a>.</p>
       <p class="fine">No pitch deck required on your side — just an idea of how many leads you're sitting on.</p>
     </div>
   </div>
@@ -701,6 +724,13 @@
   </div>
 </footer>
 
+<div class="modal" id="cal-modal" role="dialog" aria-modal="true" aria-label="Book your audit call">
+  <div class="modal-box">
+    <button class="modal-close" id="cal-close" aria-label="Close">×</button>
+    <iframe id="cal-frame" title="Book your audit call"></iframe>
+  </div>
+</div>
+
 <script>
   /* ==========================================================================
      EDIT THIS BLOCK ONLY. Fill in a value and its feature appears; leave it
@@ -724,14 +754,30 @@
 
   (function applyContent(c) {
     if (c.ghlCalendarUrl) {
-      var slot = document.getElementById('calendar-embed');
-      var frame = document.createElement('iframe');
-      frame.src = c.ghlCalendarUrl;
-      frame.style.cssText = 'width:100%;max-width:760px;height:720px;border:none;border-radius:8px;background:transparent';
-      frame.title = 'Book a strategy call';
-      slot.appendChild(frame);
-      slot.hidden = false;
+      /* two-button step: Book (opens popup with the calendar) + Call.
+         The white GHL widget lives inside a modal so the page stays on-brand,
+         and the iframe only loads on first open (faster page). */
+      var modal = document.getElementById('cal-modal');
+      var frame = document.getElementById('cal-frame');
+      var openBtn = document.getElementById('book-open');
+      var loaded = false;
+      function openModal(e){
+        if (e) e.preventDefault();
+        if (!loaded) { frame.src = c.ghlCalendarUrl; loaded = true; }
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal(){
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      openBtn.hidden = false;
+      openBtn.addEventListener('click', openModal);
+      document.getElementById('cal-close').addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
       document.getElementById('book-mailto').hidden = true;
+      document.getElementById('book-alt').hidden = false;
     }
     if (c.phoneNumber) {
       var tel = document.getElementById('book-tel');
