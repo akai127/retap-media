@@ -231,9 +231,10 @@
   .layer p{grid-row:1}
   .layer.core .tag{color:#151102;background:var(--gold);border-radius:999px;padding:3px 10px}
   @media (max-width:640px){
-    .layer{grid-template-columns:1fr}
-    .layer p{grid-column:1}
-    .layer .tag{order:-1}
+    .layer{grid-template-columns:1fr;gap:10px}
+    .layer h3{grid-column:1;grid-row:auto}
+    .layer p{grid-column:1;grid-row:auto}
+    .layer .tag{grid-column:1;grid-row:auto;justify-self:start;order:-1}
   }
 
   /* ---------- metro exclusivity band ---------- */
