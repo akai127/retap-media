@@ -710,7 +710,7 @@
         <img src="assets/retap-mark.png" alt="Retap Media logo" style="width:48px;height:48px">
         <span class="brand-name">RETAP&nbsp;<b>MEDIA</b></span>
       </div>
-      <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.</small>
+      <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.<br><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></small>
     </div>
     <small>
       The model<br>
@@ -757,28 +757,14 @@
 
   (function applyContent(c) {
     if (c.ghlCalendarUrl) {
-      /* two-button step: Book (opens popup with the calendar) + Call.
-         The white GHL widget lives inside a modal so the page stays on-brand,
-         and the iframe only loads on first open (faster page). */
-      var modal = document.getElementById('cal-modal');
-      var frame = document.getElementById('cal-frame');
+      /* A2P compliance: no appointment form may live on a page carrying the
+         chat widget, so booking opens on book.retapmedia.com (branded page,
+         no widget there) instead of an on-page modal. */
       var openBtn = document.getElementById('book-open');
-      var loaded = false;
-      function openModal(e){
-        if (e) e.preventDefault();
-        if (!loaded) { frame.src = c.ghlCalendarUrl; loaded = true; }
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal(){
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-      }
+      openBtn.href = 'https://book.retapmedia.com/';
+      openBtn.target = '_blank';
+      openBtn.rel = 'noopener';
       openBtn.hidden = false;
-      openBtn.addEventListener('click', openModal);
-      document.getElementById('cal-close').addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
       document.getElementById('book-mailto').hidden = true;
       document.getElementById('book-alt').hidden = false;
     }
