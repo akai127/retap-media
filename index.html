@@ -98,7 +98,9 @@
   }
   ::selection{background:var(--gold);color:var(--ink)}
   a{color:var(--gold);text-decoration:none}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{position:fixed;left:24px;top:12px;z-index:200;background:var(--gold);color:#151102;padding:10px 16px;border-radius:4px;font-weight:600}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
   img,svg{max-width:100%}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   [hidden]{display:none !important}
@@ -199,7 +201,7 @@
   .lrow.lit{background:rgba(91,193,126,.07)}
   .lrow.lit .st{color:var(--green)}
   .lrow.lit .nm{color:var(--champagne)}
-  .ledger-note{font-family:var(--mono);font-size:10.5px;color:rgba(156,150,138,.6);margin-top:10px;text-align:right;letter-spacing:.06em}
+  .ledger-note{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:10px;text-align:right;letter-spacing:.06em}
 
   /* ---------- shared section chrome ---------- */
   section{padding:88px 0 0}
@@ -220,7 +222,7 @@
   .stat-num{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--gold-light);line-height:1}
   .stat-num.ember{color:var(--ember)}
   .stat-label{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
-  .stat-src{font-family:var(--mono);font-size:10.5px;color:rgba(156,150,138,.55);margin-top:8px;letter-spacing:.04em}
+  .stat-src{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
 
   /* ---------- stack ---------- */
   .stack{display:grid;gap:14px}
@@ -326,7 +328,7 @@
   .founder-photos figure{margin:0;text-align:center}
   .founder-photos img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
   .founder-photos figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.08em}
-  .founder h3{font-family:var(--display);font-weight:500;font-size:24px;color:#F5F2E9;margin-bottom:12px}
+  .founder h2{font-family:var(--display);font-weight:500;font-size:24px;color:#F5F2E9;margin-bottom:12px}
   .founder p{color:var(--muted);font-size:16px}
   .founder .sig{font-family:var(--display);font-style:italic;color:var(--gold);font-size:20px;margin-top:14px}
   @media (max-width:760px){
@@ -349,24 +351,6 @@
   .book .fine{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.04em}
   #calendar-embed{margin-top:30px}
 
-  /* ---------- booking modal ---------- */
-  .modal{
-    position:fixed;inset:0;z-index:100;display:none;
-    align-items:center;justify-content:center;padding:20px;
-    background:rgba(10,10,11,.82);backdrop-filter:blur(5px);
-  }
-  .modal.open{display:flex}
-  .modal-box{
-    background:#fff;border-radius:12px;position:relative;overflow:hidden;
-    width:min(780px,100%);height:min(740px,92vh);
-    box-shadow:0 30px 90px rgba(0,0,0,.6);
-  }
-  .modal-box iframe{width:100%;height:100%;border:none;display:block}
-  .modal-close{
-    position:absolute;top:8px;right:8px;z-index:2;
-    width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
-    background:#0A0A0B;color:#F1D77E;font-size:18px;line-height:1;
-  }
   .book-alt{font-size:13.5px;color:var(--muted);margin-top:16px}
   .book-alt a{color:var(--muted);text-decoration:underline}
   .book-alt a:hover{color:var(--gold-light)}
@@ -377,7 +361,10 @@
   .foot-brand{display:flex;align-items:center;gap:12px}
   .foot-brand svg{width:52px;height:22px}
   .foot small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:2;letter-spacing:.04em}
-  .foot a{color:var(--muted)}
+  /* Footer links sit in a block of identically-coloured text, so colour alone
+     cannot distinguish them (WCAG 1.4.1). Same for links inside prose. */
+  .foot a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+  .faq .a a,.metro a.check{text-decoration:underline;text-underline-offset:2px}
   .foot a:hover{color:var(--gold-light)}
 
   /* reveal on scroll */
@@ -390,6 +377,7 @@
 </style>
 </head>
 <body id="top">
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
@@ -408,6 +396,8 @@
   </div>
 </header>
 
+<main id="main">
+
 <!-- ============ HERO ============ -->
 <section class="hero" style="padding-top:84px">
   <div class="wrap hero-grid">
@@ -421,7 +411,7 @@
       </div>
       <p class="hero-note">For businesses with 500+ leads in their database. No long-term contracts.</p>
     </div>
-    <div class="ledger" aria-label="Example CRM lead list being reactivated">
+    <div class="ledger" role="group" aria-label="Example CRM lead list being reactivated">
       <div class="ledger-head">
         <div class="ledger-title">Lead database · 1,382 contacts<span>Example — what a "dead" CRM actually holds</span></div>
         <div class="ledger-sum" id="ledger-sum">$0 re-earned</div>
@@ -601,19 +591,19 @@
     </div>
     <div class="stance">
       <div class="tenet reveal">
-        <h3><span class="ok">✓</span>We count sits, not "bookings"</h3>
+        <h3><span class="ok" aria-hidden="true">✓</span>We count sits, not "bookings"</h3>
         <p>An appointment counts when a qualified decision-maker actually sits — reconfirmed, transcript attached. No-shows get replaced, not tallied.</p>
       </div>
       <div class="tenet reveal">
-        <h3><span class="ok">✓</span>Guarantees in writing</h3>
+        <h3><span class="ok" aria-hidden="true">✓</span>Guarantees in writing</h3>
         <p>Every engagement is built around a written outcome number. Miss it, and the bill stops until we've hit it.</p>
       </div>
       <div class="tenet reveal">
-        <h3><span class="ok">✓</span>Compliant by design</h3>
+        <h3><span class="ok" aria-hidden="true">✓</span>Compliant by design</h3>
         <p>Carrier-registered numbers in your name, first-party lists only, instant opt-outs, business-hours sending, and a full message log you own.</p>
       </div>
       <div class="tenet reveal">
-        <h3><span class="ok">✓</span>Your brand, protected</h3>
+        <h3><span class="ok" aria-hidden="true">✓</span>Your brand, protected</h3>
         <p>You approve every script before it sends. The sender is identified in every thread. Your company is never the test case.</p>
       </div>
     </div>
@@ -686,7 +676,7 @@
         </figure>
       </div>
       <div>
-        <h3 id="founders-h">The people behind the engine.</h3>
+        <h2 id="founders-h">The people behind the engine.</h2>
         <p>We're Preston Whitty and Patrick Viau — a two-man team that builds appointment systems for home-services companies, because the operators doing the best work are usually the ones losing the most deals to follow-up that stops at voicemail number one. We keep the client list small so every build gets our full attention, and every campaign we run is one we'd put our own names on — literally, since they're right here.</p>
         <p class="sig">— Preston &amp; Patrick</p>
       </div>
@@ -711,11 +701,13 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap foot">
     <div>
       <div class="foot-brand">
-        <img src="assets/retap-mark.png" alt="Retap Media logo" style="width:48px;height:48px">
+        <img src="assets/retap-mark.png" alt="" style="width:48px;height:48px">
         <span class="brand-name">RETAP&nbsp;<b>MEDIA</b></span>
       </div>
       <small style="margin-top:14px">© 2026 Retap Media LLC · Florida<br>Turning the leads you already paid for into booked appointments.<br><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></small>
@@ -736,13 +728,6 @@
     </small>
   </div>
 </footer>
-
-<div class="modal" id="cal-modal" role="dialog" aria-modal="true" aria-label="Book your audit call">
-  <div class="modal-box">
-    <button class="modal-close" id="cal-close" aria-label="Close">×</button>
-    <iframe id="cal-frame" title="Book your audit call"></iframe>
-  </div>
-</div>
 
 <script>
   /* ==========================================================================
@@ -843,17 +828,21 @@
       sum.style.color = 'var(--green)';
       return;
     }
-    var k = 0;
-    setInterval(function () {
-      if (k >= relights.length) return;
-      var job = relights[k++];
+    /* Self-terminating chain rather than a forever-running interval: the whole
+       sequence finishes inside 5s, which keeps it under the threshold where
+       auto-updating content would need a pause control (WCAG 2.2.2). */
+    function relight(k) {
+      var job = relights[k];
       var row = rows[job.i];
       row.classList.remove('dead');
       row.classList.add('lit');
       row.querySelector('.st').textContent = job.st;
       sum.textContent = money(job.val);
       sum.style.color = 'var(--green)';
-    }, 2600);
+    }
+    relights.forEach(function (job, k) {
+      setTimeout(function () { relight(k); }, 1400 * (k + 1));
+    });
   })();
 </script>
 <!-- GHL chat widget (Retap Media location) — also serves as the visible
