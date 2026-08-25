@@ -88,8 +88,8 @@
   @keyframes flash{0%,92.5%,94.5%,100%{opacity:0}93%{opacity:.5}93.6%{opacity:.08}94%{opacity:.34}}
   .rain{position:absolute;inset:0;background-image:repeating-linear-gradient(102deg, rgba(190,205,220,.075) 0 1px, transparent 1px 90px);animation:rain .62s linear infinite;opacity:.6}
   @keyframes rain{from{background-position:0 0}to{background-position:-28px 340px}}
-  video.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .8s}
-  video.herovid.on{opacity:1}
+  video.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1}
+  @media (max-width:768px){ video.herovid{display:none} }
   .hero .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(16,18,20,.25) 0%, rgba(16,18,20,.55) 60%, var(--ink) 98%)}
   .hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.25fr .9fr;gap:44px;align-items:center;padding-top:72px;padding-bottom:84px}
   @media (max-width:880px){ .hero .wrap{grid-template-columns:1fr;padding-top:48px} }
@@ -239,7 +239,7 @@
 
 <section class="hero" id="top">
   <div class="sky" aria-hidden="true"><div class="drift"></div><div class="drift b"></div><div class="flash"></div><div class="rain"></div></div>
-  <video class="herovid" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
+  <video class="herovid" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
   <div class="shade" aria-hidden="true"></div>
@@ -471,14 +471,16 @@
 </div>
 
 <script>
-  // Hero video: activates only if assets/hero.mp4 exists (drop in Cox's real drone footage); storm canvas runs otherwise.
+  // Hero video: plays licensed aerial footage; if the file is missing or playback fails, the CSS storm sky remains.
   (function(){
     var v=document.querySelector('video.herovid');
     if(!v)return;
-    v.addEventListener('canplay',function(){ if(!matchMedia('(max-width:768px)').matches){ v.classList.add('on'); } });
     v.addEventListener('error',function(){ v.remove(); },true);
     var s=v.querySelector('source');
     if(s){ s.addEventListener('error',function(){ v.remove(); }); }
+    if(!matchMedia('(max-width:768px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var p=v.play(); if(p&&p.catch){ p.catch(function(){}); }
+    }else{ v.removeAttribute('autoplay'); v.pause(); }
   })();
 
   // Lead form -> instant-response simulation
