@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cox Roofing LLC — Storm &amp; Insurance Claim Roofing, Brevard County | Design Demo</title>
+<meta name="description" content="Design demo built by Retap Media for Cox Roofing LLC of Melbourne, Florida. Not the live Cox Roofing website.">
+<link rel="icon" type="image/png" href="../../assets/retap-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101214;            /* storm charcoal ground */
+    --ink-2:#16191d;          /* raised panel */
+    --ink-3:#1d2127;          /* card */
+    --cloud:#262b33;          /* borders / recessed */
+    --white:#f4f2ec;          /* warm paper white */
+    --body:#cfccc2;           /* body text on dark */
+    --muted:#8d8b84;
+    --gold:#d9a441;           /* Cox badge gold — CTAs only */
+    --gold-deep:#b3812a;
+    --storm:#7fa3b8;          /* slate-blue secondary accent */
+    --alert:#c8502e;          /* storm-banner ember */
+    --ok:#5bbf82;
+    --display:'Barlow Condensed','Archivo Narrow',sans-serif;
+    --sans:'Archivo','Segoe UI',Arial,sans-serif;
+    --mono:'IBM Plex Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--body);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:var(--gold);text-decoration:none}
+  img{max-width:100%}
+  h1,h2,h3{color:var(--white);font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:1.02;text-wrap:balance}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  section{padding:64px 0}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;padding:13px 26px;border:0;cursor:pointer;transition:transform .12s ease, background .15s}
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:var(--gold);color:#16130a}
+  .btn-gold:hover{background:var(--gold-deep);color:#fff}
+  .btn-line{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px var(--cloud)}
+  .btn-line:hover{box-shadow:inset 0 0 0 2px var(--gold);color:var(--gold)}
+
+  /* ---------- demo ribbon ---------- */
+  .demo-ribbon{position:sticky;top:0;z-index:60;background:#0b0c0d;border-bottom:1px solid var(--cloud);
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:7px 14px;text-transform:uppercase}
+  .demo-ribbon b{color:var(--gold);font-weight:500}
+  .demo-ribbon a{color:var(--storm)}
+
+  /* ---------- header ---------- */
+  header.site{position:sticky;top:31px;z-index:55;background:rgba(16,18,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--cloud)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:11px}
+  .badge{width:44px;height:44px;border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+  .badge span{font-family:var(--display);font-weight:800;font-size:17px;color:var(--gold);line-height:1}
+  .badge small{font-family:var(--mono);font-size:5.5px;letter-spacing:.18em;color:var(--white)}
+  .brand .nm{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.05em;color:var(--white);line-height:.95}
+  .brand .nm small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--gold);font-weight:400}
+  nav.links{display:flex;gap:22px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase}
+  nav.links a{color:var(--body)}
+  nav.links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .phone{font-family:var(--display);font-weight:700;font-size:20px;color:var(--white);white-space:nowrap}
+  .phone small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;font-weight:400}
+  .nav .btn{padding:10px 18px;font-size:16px}
+  @media (max-width:920px){ nav.links{display:none} }
+  @media (max-width:560px){ .phone{display:none} }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:0;border-bottom:1px solid var(--cloud)}
+  .sky{position:absolute;inset:0;z-index:0;background:
+      radial-gradient(120% 90% at 15% -10%, #3a4550 0%, transparent 55%),
+      radial-gradient(140% 100% at 85% -20%, #2c3540 0%, transparent 60%),
+      linear-gradient(180deg,#232a32 0%, #171b20 45%, var(--ink) 100%)}
+  .sky .drift{position:absolute;inset:-40% -20%;background:
+      radial-gradient(45% 30% at 30% 35%, rgba(90,105,120,.28), transparent 70%),
+      radial-gradient(38% 26% at 70% 25%, rgba(70,85,100,.24), transparent 70%),
+      radial-gradient(50% 32% at 50% 60%, rgba(55,65,78,.20), transparent 70%);
+      animation:drift 46s linear infinite alternate}
+  .sky .drift.b{animation-duration:67s;animation-direction:alternate-reverse;opacity:.7;transform:scale(1.2)}
+  @keyframes drift{from{transform:translateX(-4%) translateY(-1%)}to{transform:translateX(4%) translateY(2%)}}
+  .sky .flash{position:absolute;inset:0;background:radial-gradient(60% 45% at 68% 12%, rgba(220,228,240,.55), transparent 70%);opacity:0;animation:flash 13s infinite}
+  @keyframes flash{0%,92.5%,94.5%,100%{opacity:0}93%{opacity:.5}93.6%{opacity:.08}94%{opacity:.34}}
+  .rain{position:absolute;inset:0;background-image:repeating-linear-gradient(102deg, rgba(190,205,220,.075) 0 1px, transparent 1px 90px);animation:rain .62s linear infinite;opacity:.6}
+  @keyframes rain{from{background-position:0 0}to{background-position:-28px 340px}}
+  video.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .8s}
+  video.herovid.on{opacity:1}
+  .hero .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(16,18,20,.25) 0%, rgba(16,18,20,.55) 60%, var(--ink) 98%)}
+  .hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.25fr .9fr;gap:44px;align-items:center;padding-top:72px;padding-bottom:84px}
+  @media (max-width:880px){ .hero .wrap{grid-template-columns:1fr;padding-top:48px} }
+  .hero h1{font-size:clamp(42px,6vw,68px);font-weight:800;margin:14px 0 16px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero .sub{font-size:18.5px;max-width:520px;color:var(--body)}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--white);background:rgba(22,25,29,.72);border:1px solid var(--cloud);padding:6px 11px;display:inline-flex;gap:7px;align-items:center}
+  .chip b{color:var(--gold);font-weight:500}
+  .star{color:var(--gold)}
+
+  /* hero form card */
+  .lead-card{background:var(--ink-2);border:1px solid var(--cloud);border-top:3px solid var(--gold);padding:22px 22px 20px;box-shadow:0 22px 50px rgba(0,0,0,.45)}
+  .lead-card h3{font-size:24px;margin-bottom:4px}
+  .lead-card p.small{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .lead-card label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:11px 0 4px}
+  .lead-card input,.lead-card select{width:100%;background:var(--ink);border:1px solid var(--cloud);color:var(--white);font-family:var(--sans);font-size:15px;padding:10px 12px;outline:none}
+  .lead-card input:focus,.lead-card select:focus{border-color:var(--gold)}
+  .lead-card .btn{width:100%;justify-content:center;margin-top:16px}
+  .lead-card .fine{font-size:10.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+
+  /* simulation chat */
+  .sim{display:none;margin-top:6px}
+  .sim.on{display:block}
+  .sim .simhead{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--alert);margin-bottom:9px}
+  .sim .simhead .t{color:var(--ok)}
+  .bubble{background:#20242b;border:1px solid var(--cloud);padding:10px 13px;font-size:14.5px;color:var(--white);border-radius:12px 12px 12px 3px;margin-bottom:7px;max-width:95%;opacity:0;transform:translateY(6px);transition:all .35s}
+  .bubble.show{opacity:1;transform:none}
+  .bubble small{display:block;font-family:var(--mono);font-size:9.5px;color:var(--muted);margin-top:5px}
+  .sim .note{font-size:11px;color:var(--muted);border-left:2px solid var(--gold);padding-left:9px;margin-top:10px}
+
+  /* ---------- trust bar ---------- */
+  .trust{background:var(--ink-2);border-bottom:1px solid var(--cloud);padding:16px 0}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:center;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  .trust b{color:var(--white);font-weight:500}
+  .trust .g{color:var(--gold)}
+
+  /* ---------- storm banner ---------- */
+  .storm-note{background:linear-gradient(90deg, rgba(200,80,46,.14), rgba(200,80,46,.05));border-top:1px solid rgba(200,80,46,.4);border-bottom:1px solid rgba(200,80,46,.4)}
+  .storm-note .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  .storm-note p{font-size:14.5px;color:var(--white)}
+  .storm-note p b{color:#eb8d6a}
+  .storm-note .btn{padding:8px 16px;font-size:15px}
+
+  /* ---------- sections ---------- */
+  .sec-head{max-width:640px;margin-bottom:36px}
+  .sec-head h2{font-size:clamp(30px,4vw,44px);font-weight:800;margin-top:12px}
+  .sec-head p{margin-top:12px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cards.four{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:880px){ .cards,.cards.four{grid-template-columns:1fr 1fr} }
+  @media (max-width:560px){ .cards,.cards.four{grid-template-columns:1fr} }
+  .card{background:var(--ink-3);border:1px solid var(--cloud);padding:22px 20px}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{font-size:14.5px}
+  .card .ic{font-family:var(--display);font-weight:800;font-size:15px;color:var(--gold);letter-spacing:.1em;margin-bottom:12px;display:block}
+
+  /* adjuster advantage */
+  .adv{background:var(--ink-2);border-top:1px solid var(--cloud);border-bottom:1px solid var(--cloud)}
+  .adv .lede{font-size:19px;color:var(--white);max-width:720px;margin-top:14px}
+  .adv .lede em{color:var(--gold);font-style:normal}
+
+  /* process */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+  @media (max-width:880px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--ink-3);border:1px solid var(--cloud);padding:18px 16px;position:relative}
+  .step::before{counter-increment:step;content:"0" counter(step);font-family:var(--display);font-weight:800;font-size:30px;color:var(--gold);display:block;margin-bottom:8px}
+  .step h3{font-size:17.5px;margin-bottom:6px}
+  .step p{font-size:13px}
+  .law{margin-top:22px;background:var(--ink-3);border:1px solid var(--cloud);border-left:3px solid var(--gold);padding:14px 18px;font-size:14px;color:var(--white)}
+  .law strong{color:var(--gold)}
+  .warn{margin-top:14px;background:rgba(200,80,46,.08);border:1px solid rgba(200,80,46,.35);padding:14px 18px;font-size:14px}
+  .warn b{color:#eb8d6a}
+
+  /* proof */
+  .proof .big{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,54px);color:var(--white);text-transform:uppercase;line-height:1}
+  .proof .big em{color:var(--gold);font-style:normal}
+  .proof .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+  @media (max-width:820px){ .proof .grid{grid-template-columns:1fr} }
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .shot{aspect-ratio:4/3;background:linear-gradient(160deg,#252b33,#1a1e24);border:1px dashed var(--cloud);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .gstat{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
+  .gstat div b{display:block;font-family:var(--display);font-weight:800;font-size:34px;color:var(--gold)}
+  .gstat div span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+  /* areas */
+  .areas .list{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+  .areas .list span{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.05em;text-transform:uppercase;color:var(--white);background:var(--ink-3);border:1px solid var(--cloud);padding:7px 14px}
+
+  /* faq */
+  details{background:var(--ink-3);border:1px solid var(--cloud);margin-bottom:10px}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:15px 18px;font-family:var(--display);font-weight:700;font-size:18.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--white)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--display);color:var(--gold);font-size:24px;font-weight:700}
+  details[open] summary::after{content:"–"}
+  details .a{padding:0 18px 16px;font-size:14.5px}
+
+  /* final cta */
+  .final{background:linear-gradient(180deg,var(--ink-2),var(--ink));border-top:1px solid var(--cloud);text-align:center}
+  .final h2{font-size:clamp(32px,4.5vw,50px);font-weight:800}
+  .final .phone-big{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,42px);color:var(--gold);display:block;margin:14px 0 4px}
+
+  footer{border-top:1px solid var(--cloud);padding:34px 0 90px;font-size:13px;color:var(--muted)}
+  footer .cols{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-between}
+  footer b{color:var(--white);font-weight:600}
+  footer .lic{font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+  footer .ded{margin-top:18px;font-size:12.5px;color:var(--body);border-top:1px solid var(--cloud);padding-top:14px}
+
+  /* retap bottom bar */
+  .retap-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#0b0c0d;border-top:1px solid var(--gold);
+    display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;padding:9px 14px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--body)}
+  .retap-bar b{color:var(--gold);font-weight:500}
+  .retap-bar a{color:#16130a;background:var(--gold);font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px}
+  .retap-bar a:hover{background:var(--gold-deep);color:#fff}
+
+  @media (prefers-reduced-motion: reduce){
+    .sky .drift,.sky .flash,.rain{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon"><span><b>Design demo</b> — built by Retap Media for Cox Roofing LLC · 25 Aug 2026 · not the live site · every section configurable</span></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="badge"><span>CX</span><small>ROOFING</small></div>
+      <div class="nm">Cox Roofing<small>Storm &amp; Claims · Brevard County</small></div>
+    </div>
+    <nav class="links" aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#advantage">Why Cox</a>
+      <a href="#process">Insurance</a>
+      <a href="#areas">Areas</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="phone" href="tel:+13219770308">(321) 977-0308<small>Call or text — a Cox answers</small></a>
+      <a class="btn btn-gold" href="#inspect">Free Inspection</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="sky" aria-hidden="true"><div class="drift"></div><div class="drift b"></div><div class="flash"></div><div class="rain"></div></div>
+  <video class="herovid" autoplay muted loop playsinline aria-hidden="true">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Melbourne, FL · Serving all of Brevard County</span>
+      <h1>Your insurer sends an adjuster.<br><em>So do we.</em></h1>
+      <p class="sub">Cox Roofing is run by two brothers who are licensed Florida insurance adjusters — and roofers. We document storm damage the way carriers expect it documented, meet your adjuster on the roof, and build the roof your policy pays for.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#inspect">Get a Free Roof Inspection</a>
+        <a class="btn btn-line" href="tel:+13219770308">Call (321) 977-0308</a>
+      </div>
+      <div class="chips">
+        <span class="chip"><span class="star">★</span> <b>4.9</b> on Google · 34 reviews</span>
+        <span class="chip">FL Certified Roofing Contractor · <b>CCC1336671</b></span>
+        <span class="chip">Licensed &amp; Insured</span>
+        <span class="chip">Brevard owned &amp; operated</span>
+      </div>
+    </div>
+
+    <div class="lead-card" id="inspect">
+      <h3>Free Roof Inspection</h3>
+      <p class="small">No cost, no obligation. Storm damage documented with photos you keep either way.</p>
+      <form id="leadform" autocomplete="off">
+        <label for="f-name">Name</label>
+        <input id="f-name" type="text" placeholder="First name" required>
+        <label for="f-phone">Mobile</label>
+        <input id="f-phone" type="tel" placeholder="(321) 555-0123" required>
+        <label for="f-city">City</label>
+        <select id="f-city">
+          <option>Melbourne</option><option>Palm Bay</option><option>Viera / Rockledge</option>
+          <option>Merritt Island</option><option>Cocoa</option><option>Titusville</option>
+          <option>Satellite Beach</option><option>Vero Beach / Sebastian</option><option>Other Brevard</option>
+        </select>
+        <label for="f-issue">What's going on?</label>
+        <select id="f-issue">
+          <option>Storm damage / possible insurance claim</option>
+          <option>Leak or repair</option>
+          <option>Roof is aging — want it checked</option>
+          <option>Buying or selling — need an inspection</option>
+        </select>
+        <button class="btn btn-gold" type="submit">Request My Inspection</button>
+        <p class="fine">Demo form — nothing is sent. On the live site, watch what happens the second a homeowner hits this button. &#8595;</p>
+      </form>
+      <div class="sim" id="sim" aria-live="polite">
+        <div class="simhead"><span>&#9679; Retap response engine — simulation</span><span class="t" id="simclock">answered in 0:00</span></div>
+        <div class="bubble" id="b1"></div>
+        <div class="bubble" id="b2"></div>
+        <div class="sim note">This is the point of the system: every form fill and missed call gets a real conversation in under 60 seconds — nights and weekends included — and books straight onto the Cox calendar while the brothers stay on a roof. <b>No message was actually sent.</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span><span class="g">★★★★★</span> <b>4.9 / 5</b> · 34 Google reviews</span>
+    <span><b>CCC1336671</b> — FL Certified Roofing Contractor</span>
+    <span><b>Licensed adjusters</b> on staff (FL all-lines)</span>
+    <span><b>Free</b> storm inspections · Brevard &amp; Indian River</span>
+  </div>
+</div>
+
+<div class="storm-note" id="stormnote">
+  <div class="wrap">
+    <p><b>Recent storm come through?</b> Damage should be documented before temporary repairs change the evidence. We photograph and log everything on the first visit — you keep the file whether you hire us or not.</p>
+    <a class="btn btn-gold" href="#inspect">Document mine</a>
+  </div>
+</div>
+
+<section class="adv" id="advantage">
+  <div class="wrap">
+    <span class="eyebrow">The adjuster advantage</span>
+    <h2 class="sec-head" style="margin-bottom:0"><span style="font-size:clamp(30px,4vw,44px);font-weight:800">Most roofers meet their first adjuster on your roof. We used to be them.</span></h2>
+    <p class="lede">Braden and Blake Cox spent years as licensed Florida all-lines adjusters working catastrophe claims before they built Cox Roofing. That changes what an inspection looks like: <em>your damage gets documented to the standard a carrier's desk reviewer expects</em> — slope by slope, test squares, date-stamped photo evidence — not a handful of phone pictures.</p>
+    <div class="cards" style="margin-top:30px">
+      <div class="card"><span class="ic">01 / FLUENT</span><h3>We speak carrier</h3><p>Scope sheets, line items, code items — the language your claim is decided in is the language we write our inspection reports in.</p></div>
+      <div class="card"><span class="ic">02 / ON-SITE</span><h3>We meet your adjuster</h3><p>When your insurance company schedules its inspection, we're on the roof with them, walking the same evidence together so nothing gets missed.</p></div>
+      <div class="card"><span class="ic">03 / STRAIGHT</span><h3>Your claim stays yours</h3><p>We don't negotiate your claim or interpret your policy — that's your and your carrier's call. We make sure the damage record they decide on is complete.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Roofs built for the Florida coast</h2>
+    </div>
+    <div class="cards four">
+      <div class="card"><span class="ic">STORM</span><h3>Storm &amp; claim restoration</h3><p>Wind and hurricane damage documented, presented, and rebuilt — shingle, metal, and tile.</p></div>
+      <div class="card"><span class="ic">REPLACE</span><h3>Full replacement</h3><p>Complete tear-off and re-roof to current Florida code, permitted and inspected, with manufacturer warranty.</p></div>
+      <div class="card"><span class="ic">REPAIR</span><h3>Repairs &amp; leaks</h3><p>Tarping, leak chase-down, flashing, and honest repair-vs-replace calls — including "it's fine, keep your money."</p></div>
+      <div class="card"><span class="ic">INSPECT</span><h3>Inspections &amp; roof reports</h3><p>Free storm inspections, plus condition reports for buying, selling, or insurance renewals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="adv" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The insurance process</span>
+      <h2>Five steps, no mystery</h2>
+      <p>A storm claim is a documentation contest. Here is exactly how it runs with us.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Free inspection</h3><p>Full roof walk, slope by slope. Date-stamped photos of every impact, lift, and seal break.</p></div>
+      <div class="step"><h3>Claim-ready file</h3><p>Your evidence organized the way a desk reviewer reads it. You file the claim with your carrier — it's yours.</p></div>
+      <div class="step"><h3>Adjuster meeting</h3><p>We meet your insurance adjuster on the roof and review every documented item together.</p></div>
+      <div class="step"><h3>Itemized estimate</h3><p>A good-faith, line-item estimate for the approved scope, as Florida law requires. No vague lump sums.</p></div>
+      <div class="step"><h3>Build &amp; warranty</h3><p>Permitted, built to code, inspected, warranted — and the job site left cleaner than we found it.</p></div>
+    </div>
+    <p class="law"><strong>Straight talk, per Florida law:</strong> homeowners are responsible for payment of their insurance deductible. Anyone who offers to waive it, rebate it, or "eat it" is committing insurance fraud — and handing you a fraud problem too. (Fla. Stat. §489.147)</p>
+    <div class="warn"><b>Watch for storm chasers.</b> After every named storm, out-of-town crews knock doors promising "free roofs." No FL license you can look up, no local address, gone by the time the warranty matters. Look up any roofer — including us — at MyFloridaLicense.com before you sign anything.</div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Recent work</span>
+        <p class="big" style="margin-top:12px">A $35,000 roof.<br><em>$2,500 out of pocket.</em></p>
+        <p style="margin-top:16px">A Melbourne homeowner's wind-damaged roof, fully documented, approved by their carrier, and rebuilt — with the homeowner paying exactly what their policy says they pay: the deductible. That's what a properly documented claim looks like. No games, no waived deductibles, no surprises.</p>
+        <div class="gstat">
+          <div><b>4.9★</b><span>34 Google reviews</span></div>
+          <div><b>100%</b><span>Brevard-based crew</span></div>
+          <div><b>48 hr</b><span>storm inspection target</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="gallery">
+          <div class="shot">Drone shot —<br>finished Melbourne re-roof</div>
+          <div class="shot">Crew photo —<br>Braden &amp; Blake on site</div>
+          <div class="shot">Before / after —<br>wind damage rebuild</div>
+          <div class="shot">Tile work —<br>Satellite Beach</div>
+          <div class="shot">Metal roof —<br>Palm Bay</div>
+          <div class="shot">Job-site video still</div>
+        </div>
+        <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px">Demo placeholders — the live build drops in Cox Roofing's real drone footage and job photos (you already post them daily).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas adv" id="areas">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:18px">
+      <span class="eyebrow">Where we work</span>
+      <h2>All of Brevard, and down the coast</h2>
+    </div>
+    <div class="list">
+      <span>Melbourne</span><span>Palm Bay</span><span>West Melbourne</span><span>Viera</span><span>Rockledge</span>
+      <span>Merritt Island</span><span>Cocoa</span><span>Cocoa Beach</span><span>Satellite Beach</span>
+      <span>Indialantic</span><span>Titusville</span><span>Grant-Valkaria</span><span>Sebastian</span><span>Vero Beach</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Questions we get every week</span>
+      <h2>FAQ</h2>
+    </div>
+    <details open>
+      <summary>Will filing a claim raise my rates?</summary>
+      <div class="a">That's between you and your carrier, and we won't pretend to know your policy — we're roofers, not your insurance advisor. What we can do is document the damage thoroughly and free, so the decision you and your carrier make is based on the real condition of the roof.</div>
+    </details>
+    <details>
+      <summary>What does the inspection cost?</summary>
+      <div class="a">Nothing. You get the photo file either way, even if the answer is "your roof is fine." About a third of our inspections end exactly that way.</div>
+    </details>
+    <details>
+      <summary>Can you waive my deductible?</summary>
+      <div class="a">No — and nobody legally can. Under Florida law the deductible is yours to pay, and a contractor offering to absorb it is committing insurance fraud with your name on the paperwork. We'd rather tell you that on a website than have you learn it from an adjuster.</div>
+    </details>
+    <details>
+      <summary>How fast can you get to me after a storm?</summary>
+      <div class="a">Our target is an inspection within 48 hours inside Brevard. Call or text (321) 977-0308 — the phone is answered by a Cox, and every message gets a response in under a minute.</div>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">Free inspection · No obligation</span>
+    <h2>Get eyes on your roof<br>that have seen 1,000 claims</h2>
+    <a class="phone-big" href="tel:+13219770308">(321) 977-0308</a>
+    <p style="margin-bottom:22px">Call, text, or send the form — either way you hear back in under a minute.</p>
+    <a class="btn btn-gold" href="#inspect">Request My Free Inspection</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>Cox Roofing LLC</b><br>
+        Melbourne, FL 32935<br>
+        <a href="tel:+13219770308">(321) 977-0308</a> · coxroofingllcfl@gmail.com
+      </div>
+      <div>
+        <b>Licensing</b><br>
+        <span class="lic">FL Certified Roofing Contractor<br>CCC1336671 · Licensed &amp; Insured</span>
+      </div>
+      <div>
+        <b>Find us</b><br>
+        Instagram @coxroofingllc<br>
+        Facebook: Cox Roofing LLC · Google Business Profile
+      </div>
+    </div>
+    <p class="ded">Homeowners are responsible for payment of their insurance deductible as required by Florida law (Fla. Stat. §489.147). Cox Roofing LLC is a roofing contractor, not a public adjuster, and does not adjust, negotiate, or interpret insurance claims on behalf of any insured.</p>
+    <p style="margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em">DESIGN DEMO — BUILT BY RETAP MEDIA · RETAPMEDIA.COM · NOT THE LIVE COX ROOFING WEBSITE</p>
+  </div>
+</footer>
+
+<div class="retap-bar">
+  <span><b>Retap Media demo</b> — this page, your branding, live in days. Plus the 60-second response engine behind that form.</span>
+  <a href="https://retapmedia.com/">See how &rarr;</a>
+</div>
+
+<script>
+  // Hero video: activates only if assets/hero.mp4 exists (drop in Cox's real drone footage); storm canvas runs otherwise.
+  (function(){
+    var v=document.querySelector('video.herovid');
+    if(!v)return;
+    v.addEventListener('canplay',function(){ if(!matchMedia('(max-width:768px)').matches){ v.classList.add('on'); } });
+    v.addEventListener('error',function(){ v.remove(); },true);
+    var s=v.querySelector('source');
+    if(s){ s.addEventListener('error',function(){ v.remove(); }); }
+  })();
+
+  // Lead form -> instant-response simulation
+  (function(){
+    var form=document.getElementById('leadform');
+    var sim=document.getElementById('sim');
+    var clock=document.getElementById('simclock');
+    var b1=document.getElementById('b1');
+    var b2=document.getElementById('b2');
+    var ran=false;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(ran)return; ran=true;
+      var name=(document.getElementById('f-name').value||'there').split(' ')[0];
+      var city=document.getElementById('f-city').value;
+      var issue=document.getElementById('f-issue').value;
+      var storm=issue.indexOf('Storm')===0;
+      sim.classList.add('on');
+      var t0=Date.now();
+      var tick=setInterval(function(){
+        var s=Math.floor((Date.now()-t0)/1000);
+        clock.textContent='answered in 0:'+(s<10?'0':'')+s;
+      },250);
+      setTimeout(function(){
+        b1.innerHTML='Hey '+name+', this is Cox Roofing — got your inspection request in '+city+'. '+(storm?'Sorry you\'re dealing with storm damage.':'Happy to take a look.')+' Two quick ones so we send the right crew:'+ '<small>Cox Roofing · just now</small>';
+        b1.classList.add('show');
+      },2600);
+      setTimeout(function(){
+        b2.innerHTML='Is the roof shingle, tile, or metal — and have you noticed anything inside (stains, drips)? We\'ve got Thursday 9&#8211;11 AM or Friday after 1 PM open for a free inspection. Either work?'+'<small>Cox Roofing · just now</small>';
+        b2.classList.add('show');
+        clearInterval(tick);
+        var s=Math.floor((Date.now()-t0)/1000);
+        clock.textContent='answered in 0:'+(s<10?'0':'')+s+' ✓';
+      },7400);
+    });
+  })();
+</script>
+</body>
+</html>
