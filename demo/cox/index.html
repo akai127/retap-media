@@ -170,8 +170,8 @@
   .proof .big em{color:var(--gold);font-style:normal}
   .proof .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
   @media (max-width:820px){ .proof .grid{grid-template-columns:1fr} }
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
-  .shot{aspect-ratio:4/3;background:linear-gradient(160deg,#252b33,#1a1e24);border:1px dashed var(--cloud);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--cloud)}
   .gstat{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
   .gstat div b{display:block;font-family:var(--display);font-weight:800;font-size:34px;color:var(--gold)}
   .gstat div span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -239,7 +239,7 @@
 
 <section class="hero" id="top">
   <div class="sky" aria-hidden="true"><div class="drift"></div><div class="drift b"></div><div class="flash"></div><div class="rain"></div></div>
-  <video class="herovid" autoplay muted loop playsinline aria-hidden="true">
+  <video class="herovid" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-hidden="true">
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
   <div class="shade" aria-hidden="true"></div>
@@ -314,7 +314,14 @@
   <div class="wrap">
     <span class="eyebrow">The adjuster advantage</span>
     <h2 class="sec-head" style="margin-bottom:0"><span style="font-size:clamp(30px,4vw,44px);font-weight:800">Most roofers meet their first adjuster on your roof. We used to be them.</span></h2>
-    <p class="lede">Braden and Blake Cox spent years as licensed Florida all-lines adjusters working catastrophe claims before they built Cox Roofing. That changes what an inspection looks like: <em>your damage gets documented to the standard a carrier's desk reviewer expects</em> — slope by slope, test squares, date-stamped photo evidence — not a handful of phone pictures.</p>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center" class="adv-grid">
+      <p class="lede">Braden and Blake Cox spent years as licensed Florida all-lines adjusters working catastrophe claims before they built Cox Roofing. That changes what an inspection looks like: <em>your damage gets documented to the standard a carrier's desk reviewer expects</em> — slope by slope, test squares, date-stamped photo evidence — not a handful of phone pictures.</p>
+      <figure style="margin:0">
+        <img src="assets/crew-family-1.jpg" alt="Braden and Blake Cox with their kids in front of an active Cox Roofing job site in Palm Bay" style="width:100%;display:block;border:1px solid var(--cloud)" loading="lazy">
+        <figcaption style="font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px">The Cox brothers — crew on the roof behind them. Palm Bay, Aug 2026.</figcaption>
+      </figure>
+    </div>
+    <style>@media (max-width:820px){ .adv-grid{grid-template-columns:1fr !important} }</style>
     <div class="cards" style="margin-top:30px">
       <div class="card"><span class="ic">01 / FLUENT</span><h3>We speak carrier</h3><p>Scope sheets, line items, code items — the language your claim is decided in is the language we write our inspection reports in.</p></div>
       <div class="card"><span class="ic">02 / ON-SITE</span><h3>We meet your adjuster</h3><p>When your insurance company schedules its inspection, we're on the roof with them, walking the same evidence together so nothing gets missed.</p></div>
@@ -363,7 +370,7 @@
       <div>
         <span class="eyebrow">Recent work</span>
         <p class="big" style="margin-top:12px">A $35,000 roof.<br><em>$2,500 out of pocket.</em></p>
-        <p style="margin-top:16px">A Melbourne homeowner's wind-damaged roof, fully documented, approved by their carrier, and rebuilt — with the homeowner paying exactly what their policy says they pay: the deductible. That's what a properly documented claim looks like. No games, no waived deductibles, no surprises.</p>
+        <p style="margin-top:16px">A Palm Bay homeowner's hail-damaged roof, fully documented, approved by their carrier, and rebuilt with a brand-new Owens Corning Onyx Black system — the homeowner paying exactly what their policy says they pay: the deductible. That's what a properly documented claim looks like. No games, no waived deductibles, no surprises.</p>
         <div class="gstat">
           <div><b>4.9★</b><span>34 Google reviews</span></div>
           <div><b>100%</b><span>Brevard-based crew</span></div>
@@ -371,15 +378,16 @@
         </div>
       </div>
       <div>
+        <img src="assets/job-35k-house.jpg" alt="Blake Cox with the homeowner in front of a completed Owens Corning Onyx Black roof in Palm Bay" style="width:100%;display:block;border:1px solid var(--cloud)" loading="lazy">
         <div class="gallery">
-          <div class="shot">Drone shot —<br>finished Melbourne re-roof</div>
-          <div class="shot">Crew photo —<br>Braden &amp; Blake on site</div>
-          <div class="shot">Before / after —<br>wind damage rebuild</div>
-          <div class="shot">Tile work —<br>Satellite Beach</div>
-          <div class="shot">Metal roof —<br>Palm Bay</div>
-          <div class="shot">Job-site video still</div>
+          <img src="assets/drone-palmbay-1.jpg" alt="Drone view of a completed Cox Roofing shingle roof in Palm Bay" loading="lazy">
+          <img src="assets/drone-melb-1.jpg" alt="Drone view of a completed wind-damage roof replacement in Melbourne" loading="lazy">
+          <img src="assets/drone-melb-3.jpg" alt="Aerial view of a finished Cox Roofing project in Melbourne" loading="lazy">
+          <img src="assets/drone-palmbay-2.jpg" alt="Aerial angle of a finished Cox Roofing project in Palm Bay" loading="lazy">
+          <img src="assets/drone-melb-2.jpg" alt="Drone angle of a completed roof replacement in Melbourne" loading="lazy">
+          <img src="assets/crew-family-2.jpg" alt="Cox Roofing crew finishing a tear-off behind Braden and Blake" loading="lazy">
         </div>
-        <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px">Demo placeholders — the live build drops in Cox Roofing's real drone footage and job photos (you already post them daily).</p>
+        <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px">Real Cox Roofing jobs, from @coxroofingllc — the live build pulls your originals at full resolution.</p>
       </div>
     </div>
   </div>
