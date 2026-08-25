@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Cox Roofing LLC — Storm &amp; Insurance Claim Roofing, Brevard County | Design Demo</title>
 <meta name="description" content="Design demo built by Retap Media for Cox Roofing LLC of Melbourne, Florida. Not the live Cox Roofing website.">
-<link rel="icon" type="image/png" href="../../assets/retap-favicon.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -211,6 +211,50 @@
     .sky .drift,.sky .flash,.rain{animation:none}
     html{scroll-behavior:auto}
   }
+
+  /* ---------- humanize pass: kill the template grid ---------- */
+  .brand .logo{width:48px;height:48px;border-radius:50%;flex:none;border:2px solid var(--gold-deep);background:#0c0e11}
+  @media (max-width:768px){
+    .sky{background:url('assets/hero-poster.jpg') center/cover no-repeat}
+    .sky .drift,.sky .flash,.rain{display:none}
+    .hero .shade{background:linear-gradient(180deg, rgba(16,18,20,.52) 0%, rgba(16,18,20,.74) 60%, var(--ink) 98%)}
+  }
+  .hero{clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 42px))}
+  .adv{clip-path:polygon(0 0,100% 26px,100% 100%,0 calc(100% - 26px));padding-top:84px;padding-bottom:92px;border-top:0;border-bottom:0}
+  .final{clip-path:polygon(0 34px,100% 0,100% 100%,0 100%);padding-top:100px}
+  .storm-note{transform:rotate(-.35deg)}
+  .btn{clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%)}
+  .chip{border-radius:999px;padding:6px 14px}
+  .card{border:0;border-top:3px solid var(--cloud);transition:border-color .2s}
+  .card:hover{border-top-color:var(--gold)}
+  @media (min-width:881px){
+    .cards .card:nth-child(2){transform:translateY(16px)}
+    .cards .card:nth-child(3){transform:translateY(-6px)}
+    .cards.four .card:nth-child(2){transform:translateY(18px)}
+    .cards.four .card:nth-child(4){transform:translateY(18px)}
+    .steps .step:nth-child(even){transform:translateY(18px)}
+  }
+  .step{border:0;border-left:3px solid var(--cloud)}
+  .step:hover{border-left-color:var(--gold)}
+  .adv-grid figure{transform:rotate(-1.6deg);background:#f7f4ec;padding:9px 9px 28px;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+  .adv-grid figure img{border:0 !important}
+  .adv-grid figcaption{color:#55534b !important}
+  .proof .grid > div:last-child > img{transform:rotate(1.1deg);background:#f7f4ec;padding:9px;box-shadow:0 18px 40px rgba(0,0,0,.5);border:0 !important}
+  .gallery{margin-top:20px}
+  .gallery img{border:0;box-shadow:0 10px 26px rgba(0,0,0,.4);transition:transform .2s}
+  .gallery img:nth-child(odd){transform:rotate(-1deg)}
+  .gallery img:nth-child(even){transform:rotate(1.1deg)}
+  .gallery img:hover{transform:rotate(0) scale(1.04)}
+  .gallery img:first-child{grid-column:span 2;aspect-ratio:16/8}
+  details{background:transparent;border:0;border-bottom:1px solid var(--cloud);margin-bottom:0}
+  details .a{padding-left:0}
+  summary{padding-left:0;padding-right:4px}
+  .stamp{position:absolute;z-index:4;right:44px;bottom:70px;width:120px;height:120px;border:2px dashed var(--gold);border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;transform:rotate(-9deg);
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.85;pointer-events:none}
+  .stamp b{font-family:var(--display);font-size:21px;letter-spacing:.04em;color:var(--white);font-weight:800}
+  @media (max-width:1240px){ .stamp{display:none} }
+  .lead-card{clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
 </style>
 </head>
 <body>
@@ -220,7 +264,7 @@
 <header class="site">
   <div class="wrap nav">
     <div class="brand">
-      <div class="badge"><span>CX</span><small>ROOFING</small></div>
+      <img class="logo" src="assets/logo.png" alt="Cox Roofing LLC logo" width="48" height="48">
       <div class="nm">Cox Roofing<small>Storm &amp; Claims · Brevard County</small></div>
     </div>
     <nav class="links" aria-label="Sections">
@@ -243,6 +287,7 @@
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
   <div class="shade" aria-hidden="true"></div>
+  <div class="stamp" aria-hidden="true"><span>Adjuster-led</span><b>EST '25</b><span>Brevard Co · FL</span></div>
   <div class="wrap">
     <div>
       <span class="eyebrow">Melbourne, FL · Serving all of Brevard County</span>
