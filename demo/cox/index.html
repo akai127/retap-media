@@ -282,6 +282,10 @@
   .rv{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.65,.2,1),transform .7s cubic-bezier(.2,.65,.2,1)}
   .rv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){ .rv{opacity:1;transform:none;transition:none} }
+  /* floating form card: vertical air */
+  .hero .wrap{gap:76px 44px;padding-top:96px;padding-bottom:150px}
+  .lead-card{box-shadow:0 34px 80px rgba(0,0,0,.6), 0 6px 18px rgba(0,0,0,.35);margin-top:22px}
+  @media (max-width:880px){ .hero .wrap{gap:68px;padding-top:56px;padding-bottom:110px} .lead-card{margin-top:0} }
 </style>
 </head>
 <body>
