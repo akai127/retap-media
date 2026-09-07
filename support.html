@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Support — Retap Media</title>
-<meta name="description" content="Support for Retap Media clients: open a ticket by email or form, see response expectations, and reach a human for anything affecting your live system.">
+<meta name="description" content="Support for Retap Media clients: reach a named owner by email, see response expectations, and get a human fast for anything affecting your live system.">
 <link rel="canonical" href="https://retapmedia.com/support.html">
 <link rel="icon" type="image/png" href="assets/retap-favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,12 +93,12 @@
 <main id="main">
   <span class="eyebrow">Client support</span>
   <h1>Something's off with your system? <em>Tell us.</em></h1>
-  <p class="lede">This page is for <strong>current Retap Media clients</strong>. Every request becomes a ticket with an owner, a timestamp, and a next update — not a message that lands in someone's inbox and waits. New to Retap? <a href="inquiry.html">Start here instead</a>.</p>
+  <p class="lede">This page is for <strong>current Retap Media clients</strong>. Every request goes to a named owner with a response target — not a message that lands in someone's inbox and waits. New to Retap? <a href="inquiry.html">Start here instead</a>.</p>
 
   <div class="grid">
     <div class="card">
       <h2>How to reach us</h2>
-      <p>Email <a href="mailto:support@retapmedia.com">support@retapmedia.com</a> or use the form below. Either way you get a ticket ID by reply. Include your company name; a client ID helps but is never required.</p>
+      <p>Email <a href="mailto:support@retapmedia.com">support@retapmedia.com</a> or use the form below, which drafts that email for you. Include your company name; a client ID helps but is never required.</p>
       <p><strong>Response target:</strong> a human reply within four business hours when we're staffed, and always within one business day.</p>
     </div>
     <div class="card urgent">
@@ -108,8 +108,8 @@
   </div>
 
   <form id="ticket" novalidate>
-    <h2>Open a support ticket</h2>
-    <p class="sub">Fields marked optional can be left blank. A forgotten client ID never stops you from getting help.</p>
+    <h2>Open a support email</h2>
+    <p class="sub">Fill this in and we'll draft the email to support@retapmedia.com in your mail app — you send it from there. Fields marked optional can be left blank. A forgotten client ID never stops you from getting help.</p>
 
     <div class="row">
       <div class="f">
@@ -172,14 +172,14 @@
       <span>Please don't include passwords, API keys, or login credentials in the description or in screenshots. If we need access, we'll arrange it through a secure channel on the ticket.</span>
     </div>
 
-    <button class="btn btn-gold" type="submit">Send Ticket</button>
-    <p class="after" id="after"><strong>What happens next:</strong> your mail app opens addressed to support@retapmedia.com with the ticket filled in. Send it and you'll get a ticket ID by reply. That receipt is automatic; a human follows within the response target above.</p>
+    <button class="btn btn-gold" type="submit">Open Support Email</button>
+    <p class="after" id="after"><strong>What happens next:</strong> your mail app opens addressed to support@retapmedia.com with everything above filled in. <strong>Nothing is sent until you hit send there.</strong> A human replies within the response target above.</p>
   </form>
 
   <div class="status">
-    <strong>Ticket stages:</strong>
+    <strong>How we work a request:</strong>
     <ol>
-      <li><strong>New</strong> — received, ticket ID issued.</li>
+      <li><strong>New</strong> — received and logged.</li>
       <li><strong>Assigned</strong> — a named owner is on it (Patrick, with Preston as backup).</li>
       <li><strong>In progress</strong> — being worked; you get an update at least daily until resolved.</li>
       <li><strong>Waiting on client</strong> — we need something from you; the ticket says exactly what.</li>
@@ -194,9 +194,11 @@
 </footer>
 
 <script>
-  /* Until the GHL support form has a live embed URL, the ticket goes out as a
-     structured email to support@ so every field lands in the same shape the
-     ticket record expects. Swap SUPPORT_FORM_URL in for an iframe when ready. */
+  /* Until the GHL support form has a live embed URL, the request goes out as
+     a structured email to support@ drafted in the visitor's mail app. This
+     drafts only — it cannot confirm delivery or create a tracked ticket, so
+     the page must never claim either. Replace with the GHL form iframe when
+     the support workflow is repaired and verified. */
   (function () {
     var form = document.getElementById('ticket');
     var after = document.getElementById('after');
@@ -231,7 +233,7 @@
       location.href = 'mailto:' + TO +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(lines.join('\n'));
-      after.innerHTML = '<strong>Your mail app should have opened.</strong> If it didn’t, copy the details above into an email to <a href="mailto:' + TO + '">' + TO + '</a>. You’ll get a ticket ID by reply.';
+      after.innerHTML = '<strong>Your mail app should have opened — send the email from there.</strong> If it didn’t open, copy the details above into an email to <a href="mailto:' + TO + '">' + TO + '</a>. Nothing has been sent yet.';
     });
   })();
 </script>

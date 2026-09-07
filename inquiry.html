@@ -108,7 +108,7 @@
     </div>
     <div>
       <h2>Already a client?</h2>
-      This form is for new inquiries. For help with a live system, use the <a href="support.html">client support page</a> or email <a href="mailto:support@retapmedia.com">support@retapmedia.com</a> — it goes to a ticket, not a sales queue.
+      This form is for new inquiries. For help with a live system, use the <a href="support.html">client support page</a> or email <a href="mailto:support@retapmedia.com">support@retapmedia.com</a> — it goes to the support owner, not the sales queue.
     </div>
   </div>
 </main>
@@ -153,7 +153,7 @@
       eyebrow.textContent = 'Free response-time audit · the Ghost Test';
       heading.innerHTML = 'Find out how fast you <em>actually</em> answer.';
       lede.innerHTML = 'Give us your company name, website, and the email you want the results sent to. We submit a real-looking inquiry through your site, timestamp every response, and <strong>email you the receipts within 48 hours</strong>. No sales call required to get them.';
-      noticeText.innerHTML = '<strong>Requesting the audit does not book a call.</strong> You get the results by email either way. We’ll offer a call to walk through them — take it or don’t. Your website and a real contact email are the only things we need.';
+      noticeText.innerHTML = '<strong>Requesting the audit does not book a call.</strong> You get the results by email either way. We’ll offer a call to walk through them — take it or don’t. In the form, leave “How can we help?” on <strong>I want more information</strong> and put <strong>“Free response-time audit”</strong> plus your website in the description so it reaches the right person.';
       setMailSubject('Free response-time audit (Ghost Test)');
     } else if (intent === 'demo') {
       document.title = 'Request a Demo — Retap Media';
@@ -178,16 +178,40 @@
       if (intent !== 'audit') {
         eyebrow.textContent = 'Asking about ' + label;
         heading.innerHTML = 'Tell us about <em>' + label.replace(/&/g, '&amp;') + '</em> for your business.';
-        lede.innerHTML = 'Describe what you have today and what you want it to do. <strong>You’ll get an answer about ' + label.replace(/&/g, '&amp;') + '</strong> — not a generic pitch — by email, usually the same business day. Scoped on its own or as part of the full system, your call.';
+        lede.innerHTML = 'Describe what you have today and what you want it to do. <strong>You’ll get an answer about ' + label.replace(/&/g, '&amp;') + '</strong> — not a generic pitch — by email, usually the same business day. Scoped on its own or as part of the full system, your call. We’ve preselected the service below; change it if we guessed wrong.';
         setMailSubject('Inquiry: ' + label);
       }
     }
 
-    /* Pass the same params through to the embedded form for prefill. */
+    /* Prefill the GHL form. The form's query keys and option strings are a
+       contract with the GHL build (handoff 2026-09-07): only these exact
+       values select anything; anything else is left unselected so the
+       visitor picks. The audit is a website offer, not a dropdown option, so
+       it maps to "I want more information" and the audit request itself is
+       carried in the page copy + email subject, never silently dropped. */
+    var GHL_INTENT = {
+      'demo':  'Book a demo',
+      'buy':   'Ready to get started',
+      'info':  'I want more information',
+      'audit': 'I want more information',
+      'unsure':'I\'m not sure'
+    };
+    var GHL_SERVICE = {
+      'website':      'Website',
+      'forms-crm':    'Forms and CRM integration',
+      'booking':      'Booking and scheduling',
+      'ai-answering': 'AI answering',
+      'reactivation': 'Database reactivation',
+      'system':       'Full system',
+      'other':        'Other / not sure'
+    };
     var frame = document.getElementById('inline-v1ulikkDUjawgsY5eNCc');
     var pass = new URLSearchParams();
-    if (intent) pass.set('intent', intent);
-    if (service) pass.set('service', service);
+    var ghlIntent = GHL_INTENT[intent];
+    var ghlService = GHL_SERVICE[service];
+    if (!ghlIntent && ghlService) ghlIntent = 'I need a specific service';
+    if (ghlIntent) pass.set('retap_inquiry_intent', ghlIntent);
+    if (ghlService) pass.set('retap_service_interest', ghlService);
     var qs = pass.toString();
     if (qs) frame.src = frame.src + (frame.src.indexOf('?') === -1 ? '?' : '&') + qs;
   })();
