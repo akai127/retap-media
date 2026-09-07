@@ -1,19 +1,39 @@
 # Retap Media
 
-> Retap Media LLC (Florida) builds appointment systems for home-services
-> companies. Core offer: database reactivation — compliant SMS/email campaigns
-> that turn the leads a business already paid for into booked, qualified,
-> sat appointments — plus under-60-second speed-to-lead follow-up, an AI
-> receptionist, booking/nurture funnels, and conversion websites. Everything
-> plugs into the client's existing CRM; no new ad spend required.
+> Retap Media LLC (Florida) builds the systems that help businesses respond,
+> book, and follow up: conversion websites, forms and CRM integration,
+> booking and follow-up automation, AI answering, database reactivation, and
+> under-60-second speed-to-lead response. Clients can take the integrated
+> system or hire Retap for a single focused build. Retap does not sell lead
+> generation; it improves the demand pathways a business already has.
+> Everything plugs into the client's existing CRM; no new ad spend required.
 
-Founded by Preston Whitty and Patrick Viau. Works with businesses holding
-500+ leads in their database. Appointments are counted as qualified sits
-(reconfirmed, transcript attached; no-shows replaced, not tallied) and every
-engagement carries a written outcome guarantee. Compliance model: carrier-
-registered numbers in the client's name, first-party lists only, instant
-opt-out honoring, business-hours sending, client-owned consent and message
-logs.
+Founded by Preston Whitty (sales and scoping) and Patrick Viau (systems and
+delivery); a small sales and support team handles inquiries. Appointment
+playbooks are built for home-services trades; websites, CRM integration,
+booking, and AI answering are available to any business that takes inquiries.
+Appointments are counted as qualified sits (reconfirmed, transcript attached;
+no-shows replaced, not tallied), and response time, qualification, times
+offered, bookings, sits, and revenue are reported as separate numbers.
+Compliance model: carrier-registered numbers in the client's name, first-party
+lists only, instant opt-out honoring, business-hours sending, client-owned
+consent and message logs.
+
+Onboarding takes about two weeks (credentials and requirements, numbers and
+integrations, script approval, testing, confirmed launch date). Texting
+activates when carrier registration is approved; that timing is not
+guaranteed.
+
+## Ways to get started
+
+- Book a demo (30 minutes with Preston; booking a demo does not purchase
+  anything): https://book.retapmedia.com/
+- Tell us what you need (inquiry form, no time slot required, reply by
+  email): https://retapmedia.com/inquiry.html
+- Free response-time audit, also called the Ghost Test (Retap submits a
+  real-looking inquiry through the business's website, timestamps every
+  response, and emails results within 48 hours; no sales call required):
+  https://retapmedia.com/inquiry.html?intent=audit
 
 ## Verticals
 
@@ -28,4 +48,7 @@ logs.
 
 - Home: https://retapmedia.com/
 - Solar vertical: https://solaraiflow.com/
-- Contact: preston@retapmedia.com
+- Client support: https://retapmedia.com/support.html
+- New business: info@retapmedia.com
+- Client support email: support@retapmedia.com
+- Phone: +1 321-215-7267

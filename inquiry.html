@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tell Us What You Need — Retap Media</title>
+<meta name="description" content="Tell Retap Media what you need — a demo, a specific service, a free response-time audit, or a question. No time slot required. Our team replies by email.">
+<link rel="canonical" href="https://retapmedia.com/inquiry.html">
+<link rel="icon" type="image/png" href="assets/retap-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,600&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0B;--panel:#131311;--hairline:rgba(212,175,55,.18);
+    --gold:#D4AF37;--gold-light:#F1D77E;--gold-deep:#A8842C;--champagne:#E3CD96;
+    --body:#E9E5DB;--muted:#9C968A;
+    --display:'Fraunces',Georgia,serif;--sans:'Archivo','Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{position:fixed;left:24px;top:12px;z-index:200;background:var(--gold);color:#151102;padding:10px 16px;border-radius:4px;font-weight:600}
+  [hidden]{display:none !important}
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;border-bottom:1px solid transparent}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--body);text-decoration:none}
+  .brand img{width:36px;height:36px}
+  .brand span{font-family:var(--mono);font-size:13px;letter-spacing:.28em;color:var(--gold-light)}
+  .brand b{font-weight:500;color:var(--champagne)}
+  .top-links{display:flex;gap:18px;align-items:center}
+  .top-links a{font-size:14px;color:var(--muted);text-decoration:none}
+  .top-links a:hover{color:var(--gold-light)}
+  .top-links a.btn-gold,.top-links a.btn-gold:hover{color:#151102}
+  .btn{display:inline-block;font-weight:600;font-size:14px;padding:10px 20px;border-radius:4px;border:1px solid transparent;text-decoration:none;transition:transform .15s ease,box-shadow .2s}
+  .btn-gold{background:linear-gradient(160deg,var(--gold-light) 0%,var(--gold) 45%,var(--gold-deep) 100%);color:#151102}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(212,175,55,.28)}
+  .btn-ghost{border-color:var(--hairline);color:var(--champagne)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+  main{flex:1;width:min(860px,100%);margin:0 auto;padding:40px 20px 48px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:14px;text-align:center}
+  h1{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.5vw,42px);line-height:1.1;color:#F5F2E9;text-align:center;letter-spacing:-.01em;text-wrap:balance}
+  h1 em{font-style:italic;color:var(--gold);font-weight:600}
+  .lede{color:var(--muted);text-align:center;max-width:58ch;margin:16px auto 0}
+  .lede strong{color:var(--body);font-weight:500}
+  .notice{
+    margin:26px auto 22px;max-width:640px;background:var(--panel);border:1px solid var(--hairline);border-radius:8px;
+    padding:14px 18px;font-size:14px;color:var(--muted);display:flex;gap:12px;align-items:flex-start;
+  }
+  .notice .i{font-family:var(--mono);color:var(--gold);flex:none;line-height:1.5}
+  .notice strong{color:var(--body);font-weight:500}
+  .frame{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.55)}
+  /* GHL's form_embed.js resizes the iframe to the form's real height via
+     postMessage; the min-heights are the no-script / pre-message fallback. */
+  .frame iframe{width:100%;height:1300px;min-height:1300px;border:none;display:block}
+  @media (max-width:480px){.frame iframe{height:1500px;min-height:1500px}}
+  @media (max-width:480px){.top-links a{white-space:nowrap}.top-links{gap:12px}}
+  .alt{
+    margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  @media (max-width:620px){.alt{grid-template-columns:1fr}}
+  .alt div{background:var(--panel);border:1px solid rgba(156,150,138,.12);border-radius:8px;padding:18px 20px;font-size:14px;color:var(--muted)}
+  .alt h2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+  .alt strong{color:var(--body);font-weight:500}
+  footer{border-top:1px solid var(--hairline);padding:24px 20px 34px;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em;line-height:2}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--gold-light)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/" aria-label="Retap Media home">
+    <img src="assets/retap-mark.png" alt="">
+    <span>RETAP&nbsp;<b>MEDIA</b></span>
+  </a>
+  <nav class="top-links" aria-label="Page">
+    <a href="support.html">Client support</a>
+    <a class="btn btn-gold" id="demo-link" href="https://book.retapmedia.com/" target="_blank" rel="noopener">Book a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+  <span class="eyebrow" id="eyebrow">Tell us what you need</span>
+  <h1 id="heading">What can we <em>build</em> for you?</h1>
+  <p class="lede" id="lede">A short form — name, email, company, and what you're after. <strong>No time slot required.</strong> Our team reads every submission and replies by email, usually the same business day.</p>
+
+  <div class="notice" role="note">
+    <span class="i" aria-hidden="true">i</span>
+    <span id="notice-text"><strong>Submitting this form does not book an appointment.</strong> We'll follow up by email. If you'd rather talk first, <a id="notice-demo" href="https://book.retapmedia.com/" target="_blank" rel="noopener">pick a time with Preston</a> instead.</span>
+  </div>
+
+  <div class="frame">
+    <iframe id="inline-v1ulikkDUjawgsY5eNCc" src="https://api.leadconnectorhq.com/widget/form/v1ulikkDUjawgsY5eNCc"
+      data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+      data-activation-type="alwaysActivated" data-activation-value=""
+      data-deactivation-type="neverDeactivate" data-deactivation-value=""
+      data-form-name="Retap Website Inquiry — No Booking Required" data-height="1300"
+      data-layout-iframe-id="inline-v1ulikkDUjawgsY5eNCc" data-form-id="v1ulikkDUjawgsY5eNCc"
+      title="Retap Media inquiry form"></iframe>
+  </div>
+
+  <div class="alt">
+    <div>
+      <h2>Prefer email?</h2>
+      Write to <a id="alt-mail" href="mailto:info@retapmedia.com?subject=Website%20inquiry">info@retapmedia.com</a> with your company, what you need, and the best way to reach you. Same team, same follow-up.
+    </div>
+    <div>
+      <h2>Already a client?</h2>
+      This form is for new inquiries. For help with a live system, use the <a href="support.html">client support page</a> or email <a href="mailto:support@retapmedia.com">support@retapmedia.com</a> — it goes to a ticket, not a sales queue.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/">retapmedia.com</a> · Retap Media LLC · <a href="tel:+13212157267">(321) 215-7267</a><br>
+  7901 4th St N, Ste 300, St. Petersburg, FL 33702 · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+</footer>
+
+<script>
+  /* The homepage links here with ?intent=… and/or ?service=… so the heading
+     matches the button the visitor clicked. The same values are appended to
+     the GHL form URL so the form can prefill matching fields once the
+     intent/service fields exist on it; unknown params are ignored by GHL. */
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var intent = (q.get('intent') || '').toLowerCase();
+    var service = (q.get('service') || '').toLowerCase();
+
+    var SERVICES = {
+      'forms-crm':    'instant response & CRM integration',
+      'reactivation': 'database reactivation',
+      'ai-answering': 'AI answering',
+      'booking':      'booking & follow-up systems',
+      'website':      'a conversion website',
+      'system':       'the integrated system',
+      'other':        'a service for your business'
+    };
+
+    var eyebrow = document.getElementById('eyebrow');
+    var heading = document.getElementById('heading');
+    var lede = document.getElementById('lede');
+    var noticeText = document.getElementById('notice-text');
+    var mail = document.getElementById('alt-mail');
+
+    function setMailSubject(s) {
+      mail.href = 'mailto:info@retapmedia.com?subject=' + encodeURIComponent(s);
+    }
+
+    if (intent === 'audit') {
+      document.title = 'Free Response-Time Audit — Retap Media';
+      eyebrow.textContent = 'Free response-time audit · the Ghost Test';
+      heading.innerHTML = 'Find out how fast you <em>actually</em> answer.';
+      lede.innerHTML = 'Give us your company name, website, and the email you want the results sent to. We submit a real-looking inquiry through your site, timestamp every response, and <strong>email you the receipts within 48 hours</strong>. No sales call required to get them.';
+      noticeText.innerHTML = '<strong>Requesting the audit does not book a call.</strong> You get the results by email either way. We’ll offer a call to walk through them — take it or don’t. Your website and a real contact email are the only things we need.';
+      setMailSubject('Free response-time audit (Ghost Test)');
+    } else if (intent === 'demo') {
+      document.title = 'Request a Demo — Retap Media';
+      eyebrow.textContent = 'Demo request';
+      heading.innerHTML = 'Tell us a little, and we’ll <em>set up</em> the demo.';
+      lede.innerHTML = 'Leave your details and what you want to see. Preston will reply by email with times, or you can <a href="https://book.retapmedia.com/" target="_blank" rel="noopener">pick one now</a>.';
+      setMailSubject('Demo request');
+    } else if (intent === 'buy') {
+      document.title = 'Ready to Get Started — Retap Media';
+      eyebrow.textContent = 'Ready to get started';
+      heading.innerHTML = 'Let’s scope it and get you <em>onboarded.</em>';
+      lede.innerHTML = 'Tell us what you want built and roughly when. Preston replies directly with scope, pricing, and the agreement — <strong>no demo required</strong> to get to the paperwork.';
+      setMailSubject('Ready to get started');
+    } else if (intent === 'support') {
+      /* Support has its own page; send them there rather than into the sales queue. */
+      location.replace('support.html');
+      return;
+    }
+
+    if (service && SERVICES[service]) {
+      var label = SERVICES[service];
+      if (intent !== 'audit') {
+        eyebrow.textContent = 'Asking about ' + label;
+        heading.innerHTML = 'Tell us about <em>' + label.replace(/&/g, '&amp;') + '</em> for your business.';
+        lede.innerHTML = 'Describe what you have today and what you want it to do. <strong>You’ll get an answer about ' + label.replace(/&/g, '&amp;') + '</strong> — not a generic pitch — by email, usually the same business day. Scoped on its own or as part of the full system, your call.';
+        setMailSubject('Inquiry: ' + label);
+      }
+    }
+
+    /* Pass the same params through to the embedded form for prefill. */
+    var frame = document.getElementById('inline-v1ulikkDUjawgsY5eNCc');
+    var pass = new URLSearchParams();
+    if (intent) pass.set('intent', intent);
+    if (service) pass.set('service', service);
+    var qs = pass.toString();
+    if (qs) frame.src = frame.src + (frame.src.indexOf('?') === -1 ? '?' : '&') + qs;
+  })();
+</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+</body>
+</html>
