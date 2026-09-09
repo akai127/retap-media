@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Client Support — Retap Media</title>
-<meta name="description" content="Support for Retap Media clients: reach a named owner by email, see response expectations, and get a human fast for anything affecting your live system.">
+<meta name="description" content="Support for Retap Media clients: submit a request with an optional screenshot and get a human response — our target is under 24 hours, including weekends and holidays.">
 <link rel="canonical" href="https://retapmedia.com/support.html">
 <link rel="icon" type="image/png" href="assets/retap-favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--ink);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
   a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
-  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
   .skip{position:absolute;left:-9999px}
   .skip:focus{position:fixed;left:24px;top:12px;z-index:200;background:var(--gold);color:#151102;padding:10px 16px;border-radius:4px;font-weight:600}
   header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px}
@@ -44,35 +44,19 @@
   .card.urgent h2{color:var(--ember)}
   .card strong{color:var(--body);font-weight:500}
   .card p+p{margin-top:8px}
-  form{background:var(--panel);border:1px solid var(--hairline);border-radius:10px;padding:28px 26px}
-  form h2{font-family:var(--display);font-weight:500;font-size:24px;color:#F5F2E9;margin-bottom:6px}
-  form .sub{font-size:14px;color:var(--muted);margin-bottom:22px}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media (max-width:560px){.row{grid-template-columns:1fr}}
-  .f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-  label{font-size:13.5px;font-weight:500;color:var(--body)}
-  label .opt{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.04em;margin-left:6px}
-  input,select,textarea{
-    font-family:var(--sans);font-size:15px;color:var(--body);background:#0E0E0D;
-    border:1px solid rgba(156,150,138,.25);border-radius:6px;padding:11px 12px;width:100%;
-  }
-  textarea{min-height:130px;resize:vertical}
-  select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
-  .hint{font-size:12.5px;color:var(--muted)}
   .warn{
     display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);
-    border:1px solid rgba(224,106,69,.35);border-radius:6px;padding:10px 12px;margin:4px 0 18px;
+    border:1px solid rgba(224,106,69,.35);border-radius:6px;padding:10px 12px;margin:0 0 16px;
+    background:var(--panel);
   }
   .warn .i{font-family:var(--mono);color:var(--ember);flex:none}
-  .btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:15.5px;padding:13px 26px;border-radius:4px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s ease,box-shadow .2s}
-  .btn-gold{background:linear-gradient(160deg,var(--gold-light) 0%,var(--gold) 45%,var(--gold-deep) 100%);color:#151102}
-  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(212,175,55,.28)}
-  .after{font-size:13px;color:var(--muted);margin-top:14px}
+  .frame{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.55)}
+  /* GHL's form_embed.js resizes the iframe to the form's real height via
+     postMessage; the min-heights are the no-script / pre-message fallback. */
+  .frame iframe{width:100%;height:1100px;min-height:1100px;border:none;display:block}
+  @media (max-width:480px){.frame iframe{height:1300px;min-height:1300px}}
+  .after{margin-top:22px;font-size:14px;color:var(--muted);max-width:64ch}
   .after strong{color:var(--body);font-weight:500}
-  .status{margin-top:26px;font-size:14px;color:var(--muted)}
-  .status ol{margin:8px 0 0 22px}
-  .status li{margin-bottom:4px}
-  .status strong{color:var(--body);font-weight:500}
   footer{border-top:1px solid var(--hairline);padding:24px 20px 34px;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em;line-height:2}
   footer a{color:var(--muted)}
   footer a:hover{color:var(--gold-light)}
@@ -93,99 +77,36 @@
 <main id="main">
   <span class="eyebrow">Client support</span>
   <h1>Something's off with your system? <em>Tell us.</em></h1>
-  <p class="lede">This page is for <strong>current Retap Media clients</strong>. Every request goes to a named owner with a response target — not a message that lands in someone's inbox and waits. New to Retap? <a href="inquiry.html">Start here instead</a>.</p>
+  <p class="lede">This page is for <strong>current Retap Media clients</strong>. Submit the form below and it goes straight to a named owner. <strong>Our target is a human response in under 24 hours, including weekends and holidays.</strong> New to Retap? <a href="inquiry.html">Start here instead</a>.</p>
 
   <div class="grid">
     <div class="card">
-      <h2>How to reach us</h2>
-      <p>Email <a href="mailto:preston@retapmedia.com">preston@retapmedia.com</a> or use the form below, which drafts that email for you. Include your company name; a client ID helps but is never required.</p>
-      <p><strong>Response target:</strong> a human reply within four business hours when we're staffed, and always within one business day.</p>
+      <h2>How this works</h2>
+      <p>Tell us what's happening and include a screenshot if helpful — the form accepts one image, and it stays private to our team. A client ID helps but is never required.</p>
+      <p>Our team will review your request and follow up by email. <strong>We aim to respond within 24 hours, including weekends and holidays.</strong></p>
     </div>
     <div class="card urgent">
       <h2>Calls or booking down?</h2>
-      <p>If inquiries aren't being answered or appointments aren't booking, that's <strong>critical</strong>. Mark it that way in the form, or call <a href="tel:+13212157267">(321) 215-7267</a> and say it's a live-system outage. Both founders are alerted immediately.</p>
+      <p>If inquiries aren't being answered or appointments aren't booking, that's <strong>critical</strong>. Say so in the issue description, or call <a href="tel:+13212157267">(321) 215-7267</a> and say it's a live-system outage. Both founders are alerted immediately.</p>
     </div>
   </div>
 
-  <form id="ticket" novalidate>
-    <h2>Open a support email</h2>
-    <p class="sub">Fill this in and we'll draft the email to preston@retapmedia.com in your mail app — you send it from there. Fields marked optional can be left blank. A forgotten client ID never stops you from getting help.</p>
-
-    <div class="row">
-      <div class="f">
-        <label for="t-name">Your name</label>
-        <input id="t-name" name="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="f">
-        <label for="t-company">Company</label>
-        <input id="t-company" name="company" type="text" autocomplete="organization" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="f">
-        <label for="t-email">Email</label>
-        <input id="t-email" name="email" type="email" autocomplete="email" required>
-      </div>
-      <div class="f">
-        <label for="t-client">Client ID<span class="opt">optional</span></label>
-        <input id="t-client" name="client_id" type="text" placeholder="From your onboarding email, if handy">
-      </div>
-    </div>
-    <div class="row">
-      <div class="f">
-        <label for="t-service">Affected service</label>
-        <select id="t-service" name="service" required>
-          <option value="">Choose one…</option>
-          <option>Instant response / speed-to-lead</option>
-          <option>Forms or CRM integration</option>
-          <option>Booking / calendar / reminders</option>
-          <option>AI answering / phone</option>
-          <option>Database reactivation campaign</option>
-          <option>Website</option>
-          <option>Texting / carrier registration</option>
-          <option>Billing or account</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="f">
-        <label for="t-urgency">Impact</label>
-        <select id="t-urgency" name="urgency" required>
-          <option value="">Choose one…</option>
-          <option>Critical — inquiries aren't being answered or booked</option>
-          <option>High — a client-facing message or flow is wrong</option>
-          <option>Normal — something needs fixing, nothing is broken for customers</option>
-          <option>Low — question or change request</option>
-        </select>
-      </div>
-    </div>
-    <div class="f">
-      <label for="t-desc">What's happening</label>
-      <textarea id="t-desc" name="description" required placeholder="What you expected, what happened instead, when it started, and an example (a lead's name or a timestamp) if you have one."></textarea>
-    </div>
-    <div class="f">
-      <label for="t-attach">Screenshot or attachment<span class="opt">optional</span></label>
-      <p class="hint" id="t-attach">Attach it to the email that opens after you submit — the form hands off to your mail app with everything above filled in.</p>
-    </div>
-
-    <div class="warn" role="note">
-      <span class="i" aria-hidden="true">!</span>
-      <span>Please don't include passwords, API keys, or login credentials in the description or in screenshots. If we need access, we'll arrange it through a secure channel on the ticket.</span>
-    </div>
-
-    <button class="btn btn-gold" type="submit">Open Support Email</button>
-    <p class="after" id="after"><strong>What happens next:</strong> your mail app opens addressed to preston@retapmedia.com with everything above filled in. <strong>Nothing is sent until you hit send there.</strong> A human replies within the response target above.</p>
-  </form>
-
-  <div class="status">
-    <strong>How we work a request:</strong>
-    <ol>
-      <li><strong>New</strong> — received and logged.</li>
-      <li><strong>Assigned</strong> — a named owner is on it (Patrick, with Preston as backup).</li>
-      <li><strong>In progress</strong> — being worked; you get an update at least daily until resolved.</li>
-      <li><strong>Waiting on client</strong> — we need something from you; the ticket says exactly what.</li>
-      <li><strong>Resolved</strong> — fixed and confirmed with you. Reopen any time by replying to the thread.</li>
-    </ol>
+  <div class="warn" role="note">
+    <span class="i" aria-hidden="true">!</span>
+    <span>Please don't include passwords, API keys, or login credentials in the description or in screenshots. If we need access, we'll arrange it through a secure channel when we follow up.</span>
   </div>
+
+  <div class="frame">
+    <iframe id="inline-aEDsOmQAGDuspBbfIdQ4" src="https://api.leadconnectorhq.com/widget/form/aEDsOmQAGDuspBbfIdQ4"
+      data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+      data-activation-type="alwaysActivated" data-activation-value=""
+      data-deactivation-type="neverDeactivate" data-deactivation-value=""
+      data-form-name="Retap Client Support" data-height="1100"
+      data-layout-iframe-id="inline-aEDsOmQAGDuspBbfIdQ4" data-form-id="aEDsOmQAGDuspBbfIdQ4"
+      title="Retap Media client support form"></iframe>
+  </div>
+
+  <p class="after"><strong>Prefer email?</strong> Write to <a href="mailto:preston@retapmedia.com">preston@retapmedia.com</a> with your company name and what's happening. The form above is the fastest route to the support owner, but either way a human follows up.</p>
 </main>
 
 <footer>
@@ -193,49 +114,6 @@
   7901 4th St N, Ste 300, St. Petersburg, FL 33702 · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
 </footer>
 
-<script>
-  /* Until the GHL support form has a live embed URL, the request goes out as
-     a structured email to support@ drafted in the visitor's mail app. This
-     drafts only — it cannot confirm delivery or create a tracked ticket, so
-     the page must never claim either. Replace with the GHL form iframe when
-     the support workflow is repaired and verified. */
-  (function () {
-    var form = document.getElementById('ticket');
-    var after = document.getElementById('after');
-    var TO = 'preston@retapmedia.com';
-
-    function val(id) { return document.getElementById(id).value.trim(); }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      var urgency = val('t-urgency');
-      var subject = '[' + urgency.split(' ')[0].replace(/[^A-Za-z]/g, '').toUpperCase() + '] ' +
-                    val('t-service') + ' — ' + val('t-company');
-      var lines = [
-        'SUPPORT TICKET REQUEST',
-        '',
-        'Name: ' + val('t-name'),
-        'Company: ' + val('t-company'),
-        'Email: ' + val('t-email'),
-        'Client ID: ' + (val('t-client') || '(not provided)'),
-        'Affected service: ' + val('t-service'),
-        'Impact: ' + urgency,
-        '',
-        'What is happening:',
-        val('t-desc'),
-        '',
-        '(Attach screenshots to this email. Do not include passwords or credentials.)'
-      ];
-      location.href = 'mailto:' + TO +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(lines.join('\n'));
-      after.innerHTML = '<strong>Your mail app should have opened — send the email from there.</strong> If it didn’t open, copy the details above into an email to <a href="mailto:' + TO + '">' + TO + '</a>. Nothing has been sent yet.';
-    });
-  })();
-</script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
