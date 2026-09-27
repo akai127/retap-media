@@ -49,5 +49,6 @@ guaranteed.
 - Home: https://retapmedia.com/
 - Solar vertical: https://solaraiflow.com/
 - Client support: https://retapmedia.com/support.html
-- Email: preston@retapmedia.com
+- Email (new business): info@retapmedia.com
+- Email (client support): support@retapmedia.com
 - Phone: +1 321-215-7267
